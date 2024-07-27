@@ -1,14 +1,18 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player_MoveController : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     public float speed = 5;
-    public float jumpForce;
+    public float jumpForce = 10;
 
     private Rigidbody2D rig2D;
     private Animator anim;
+
+    private bool isJumping;
+    private bool doubleJump;
     
     // Start is called before the first frame update
     void Start()
@@ -21,6 +25,7 @@ public class Player_MoveController : MonoBehaviour
     void Update()
     {
         Move();
+        Jump();
     }
 
     void Move()
@@ -42,6 +47,32 @@ public class Player_MoveController : MonoBehaviour
 
     void Jump()
     {
-        
+        if (Input.GetButtonDown("Jump"))
+        {
+            if (!isJumping)
+            {
+                rig2D.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+                doubleJump = true;
+                isJumping = true;
+            }
+            else
+            {
+                if (doubleJump)
+                {
+                    rig2D.AddForce(new Vector2(0,jumpForce * 2), ForceMode2D.Impulse);
+                    doubleJump = false;
+
+                }
+            }
+        }
+    }
+
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.layer == 8)
+        {
+            isJumping = false;
+        }
     }
 }
