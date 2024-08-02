@@ -8,11 +8,17 @@ public class PlayerController : MonoBehaviour
     public float speed = 5;
     public float jumpForce = 8;
 
+    public GameObject bow;
+    public Transform firePoint;
+    
     private Rigidbody2D rig2D;
     private Animator anim;
 
     private bool isJumping;
     private bool doubleJump;
+    private bool isFire;
+
+    private float movement;
     
     // Start is called before the first frame update
     void Start()
@@ -26,11 +32,12 @@ public class PlayerController : MonoBehaviour
     {
         Move();
         Jump();
+        Bow(); 
     }
 
     void Move()
     {
-        float movement = Input.GetAxis("Horizontal");
+        movement = Input.GetAxis("Horizontal");
         
         rig2D.velocity = new Vector2(movement * speed, rig2D.velocity.y);
 
@@ -52,7 +59,7 @@ public class PlayerController : MonoBehaviour
             transform.eulerAngles = new Vector3(0, 180, 0);
         }
 
-        if (movement == 0 && !isJumping)
+        if (movement == 0 && !isJumping && !isFire)
         {
             anim.SetInteger("Transition", 0);
         }
@@ -80,6 +87,34 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
+    }
+
+    void Bow()
+    {
+        StartCoroutine("Fire");
+    }
+
+    IEnumerator Fire()
+    {
+        if (Input.GetKeyDown(KeyCode.Z))
+        { 
+            isFire = true; 
+            anim.SetInteger("Transition", 3);
+            GameObject Bow = Instantiate(bow, firePoint.position, firePoint.rotation);
+
+            if (transform.rotation.y == 0)
+            {
+                Bow.GetComponent<BowController>().isRight = true;
+            }
+            if (transform.rotation.y == 180)
+            {
+                Bow.GetComponent<BowController>().isRight = false;
+            }
+
+            yield return new WaitForSeconds(0.2f);
+            anim.SetInteger("Transition", 0);
+        }
+        
     }
 
 
