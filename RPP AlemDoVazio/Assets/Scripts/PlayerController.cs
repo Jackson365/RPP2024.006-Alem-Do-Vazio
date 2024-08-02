@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float speed = 5;
-    public float jumpForce = 10;
+    public float jumpForce = 8;
 
     private Rigidbody2D rig2D;
     private Animator anim;
@@ -36,12 +36,25 @@ public class PlayerController : MonoBehaviour
 
         if (movement > 0)
         {
+            if (!isJumping)
+            {
+                anim.SetInteger("Transition", 1);    
+            }
             transform.eulerAngles = new Vector3(0, 0, 0);
         }
 
-        if (movement < 0)
+        if (movement < 0 )
         {
+            if (!isJumping)
+            {
+                anim.SetInteger("Transition", 1);    
+            }
             transform.eulerAngles = new Vector3(0, 180, 0);
+        }
+
+        if (movement == 0 && !isJumping)
+        {
+            anim.SetInteger("Transition", 0);
         }
     }
 
@@ -51,6 +64,7 @@ public class PlayerController : MonoBehaviour
         {
             if (!isJumping)
             {
+                anim.SetInteger("Transition", 2);
                 rig2D.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
                 doubleJump = true;
                 isJumping = true;
@@ -59,6 +73,7 @@ public class PlayerController : MonoBehaviour
             {
                 if (doubleJump)
                 {
+                    anim.SetInteger("Transition", 2);
                     rig2D.AddForce(new Vector2(0,jumpForce * 2), ForceMode2D.Impulse);
                     doubleJump = false;
 
