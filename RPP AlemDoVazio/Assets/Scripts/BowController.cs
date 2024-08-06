@@ -31,12 +31,12 @@ public class BowController : MonoBehaviour
         
     }
 
-    /*void OnTriggerEnter2D(Collider2D collison)
+    void OnTriggerEnter2D(Collider2D collison)
     {
         if(collison.gameObject.tag == "Enemy")
         {
-            collison.GetComponent<Enemy>().Damage(damage);
+            collison.GetComponent<EnemyController>().Damage(damage);
             Destroy(gameObject);
         }
-    }*/
+    }
 }

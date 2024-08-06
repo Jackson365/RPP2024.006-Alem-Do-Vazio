@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public float health = 6;
     public float speed = 5;
     public float jumpForce = 8;
 
@@ -112,9 +113,32 @@ public class PlayerController : MonoBehaviour
             }
 
             yield return new WaitForSeconds(0.2f);
+            isFire = false;
             anim.SetInteger("Transition", 0);
         }
         
+    }
+    
+    public void Damage(int dmg)
+    {
+        health -= dmg;
+        //GameController.instance.UpdateLives(health);
+        anim.SetTrigger("hit");
+        
+        if (transform.rotation.y == 0)
+        {
+            transform.position += new Vector3(-0.5f, 0, 0);
+        }
+                    
+        if (transform.rotation.y == 180)
+        {
+            transform.position += new Vector3(0.5f, 0, 0);
+        }
+                    
+        /*if(health <= 0)
+        {
+            GameController.instance.GameOver();
+        }*/
     }
 
 
