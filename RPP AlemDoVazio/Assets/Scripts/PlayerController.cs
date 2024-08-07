@@ -101,22 +101,26 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Z))
         { 
-            isFire = true; 
-            anim.SetInteger("Transition", 3);
-            GameObject Bow = Instantiate(bow, firePoint.position, firePoint.rotation);
-
-            if (transform.rotation.y == 0)
+            if(movement == 0)
             {
-                Bow.GetComponent<BowController>().isRight = true;
-            }
-            if (transform.rotation.y == 180)
-            {
-                Bow.GetComponent<BowController>().isRight = false;
-            }
+                isFire = true; 
+            
+                anim.SetInteger("Transition", 3);
+                GameObject Bow = Instantiate(bow, firePoint.position, firePoint.rotation);
 
-            yield return new WaitForSeconds(0.2f);
-            isFire = false;
-            anim.SetInteger("Transition", 0);
+                if (transform.rotation.y == 0)
+                {
+                    Bow.GetComponent<BowController>().isRight = true;
+                }
+                if (transform.rotation.y == 180)
+                {
+                    Bow.GetComponent<BowController>().isRight = false;
+                }
+
+                yield return new WaitForSeconds(0.2f);
+                isFire = false;
+                anim.SetInteger("Transition", 0);
+            }
         }
         
     }
