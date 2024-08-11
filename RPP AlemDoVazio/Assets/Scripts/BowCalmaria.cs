@@ -1,10 +1,8 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class BowController : MonoBehaviour
+public class BowCalmaria : MonoBehaviour
 {
     private Rigidbody2D rig;
     public float speed;
@@ -12,6 +10,7 @@ public class BowController : MonoBehaviour
     public int damage;
 
     public bool isRight;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +29,7 @@ public class BowController : MonoBehaviour
         {
             rig.velocity = Vector2.left * speed;
         }
-        
+
     }
 
     public void OnTriggerEnter2D(Collider2D collison)
@@ -39,7 +38,7 @@ public class BowController : MonoBehaviour
         {
             if (collison.gameObject.tag == "Enemy")
             {
-                collison.GetComponent<EnemyController>().Damage(damage);
+                collison.GetComponent<EnemyPatroll>().Damage(damage);
                 Destroy(gameObject);
             }
         }

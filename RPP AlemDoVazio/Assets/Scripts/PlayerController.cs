@@ -9,8 +9,12 @@ public class PlayerController : MonoBehaviour
     public float speed = 5;
     public float jumpForce = 8;
 
-    public GameObject bow;
+    
+    public GameObject bowCoragem;
+    public GameObject bowCalmaria;
+    
     public Transform firePoint;
+    
     
     private Rigidbody2D rig2D;
     private Animator anim;
@@ -95,6 +99,7 @@ public class PlayerController : MonoBehaviour
     void Bow()
     {
         StartCoroutine("Fire");
+        StartCoroutine("FireCALM");
     }
 
     IEnumerator Fire()
@@ -106,15 +111,15 @@ public class PlayerController : MonoBehaviour
                 isFire = true; 
             
                 anim.SetInteger("Transition", 3);
-                GameObject Bow = Instantiate(bow, firePoint.position, firePoint.rotation);
+                GameObject BowCoragem = Instantiate(bowCoragem, firePoint.position, firePoint.rotation);
 
                 if (transform.rotation.y == 0)
                 {
-                    Bow.GetComponent<BowController>().isRight = true;
+                    BowCoragem.GetComponent<BowController>().isRight = true;
                 }
                 if (transform.rotation.y == 180)
                 {
-                    Bow.GetComponent<BowController>().isRight = false;
+                    BowCoragem.GetComponent<BowController>().isRight = false;
                 }
 
                 yield return new WaitForSeconds(0.2f);
@@ -122,7 +127,33 @@ public class PlayerController : MonoBehaviour
                 anim.SetInteger("Transition", 0);
             }
         }
-        
+    }
+
+    IEnumerator FireCALM()
+    {
+        if (Input.GetKeyDown(KeyCode.X))
+        { 
+            if(movement == 0)
+            {
+                isFire = true; 
+            
+                anim.SetInteger("Transition", 3);
+                GameObject BowCalmaria = Instantiate(bowCalmaria, firePoint.position, firePoint.rotation);
+
+                if (transform.rotation.y == 0)
+                {
+                    BowCalmaria.GetComponent<BowCalmaria>().isRight = true;
+                }
+                if (transform.rotation.y == 180)
+                {
+                    BowCalmaria.GetComponent<BowCalmaria>().isRight = false;
+                }
+
+                yield return new WaitForSeconds(0.2f);
+                isFire = false;
+                anim.SetInteger("Transition", 0);
+            }
+        }
     }
     
     public void Damage(int dmg)
@@ -133,12 +164,12 @@ public class PlayerController : MonoBehaviour
         
         if (transform.rotation.y == 0)
         {
-            transform.position += new Vector3(-0.5f, 0, 0);
+            transform.position += new Vector3(-1, 0, 0);
         }
                     
         if (transform.rotation.y == 180)
         {
-            transform.position += new Vector3(0.5f, 0, 0);
+            transform.position += new Vector3(1, 0, 0);
         }
                     
         if(health <= 0)
