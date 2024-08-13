@@ -36,7 +36,7 @@ public class BowCalmaria : MonoBehaviour
     {
         if (collison != null)
         {
-            if (collison.gameObject.tag == "Enemy")
+            if (collison.gameObject.tag == "EnemyPatroll")
             {
                 collison.GetComponent<EnemyPatroll>().Damage(damage);
                 Destroy(gameObject);

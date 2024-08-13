@@ -178,6 +178,12 @@ public class PlayerController : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    
+    public void IncreaseLife(int value)
+    {
+        health += value;
+        GameController.instance.UpdateLives(health);
+    }
 
 
     private void OnCollisionEnter2D(Collision2D other)
