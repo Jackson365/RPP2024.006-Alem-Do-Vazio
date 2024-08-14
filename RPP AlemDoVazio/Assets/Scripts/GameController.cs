@@ -11,6 +11,10 @@ public class GameController : MonoBehaviour
     public static GameController instance;
     public Text healthText;
 
+    private int scoreAmulet;
+    public Text amuleText;
+    private int totalAmulet;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -23,6 +27,19 @@ public class GameController : MonoBehaviour
         {
             Destroy(this.gameObject);
         }  
+    }
+
+    private void Start()
+    {
+        totalAmulet = PlayerPrefs.GetInt("scoreAmulet");
+    }
+
+    public void UpdateAmulet(int value)
+    {
+        scoreAmulet += value;
+        amuleText.text = scoreAmulet.ToString();
+        
+        PlayerPrefs.SetInt("score", scoreAmulet + totalAmulet);
     }
     
     public void UpdateLives(int value)

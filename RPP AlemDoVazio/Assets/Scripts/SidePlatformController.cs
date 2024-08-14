@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FallingPlatformController : MonoBehaviour
+public class SidePlatformController : MonoBehaviour
 {
     private float speed = 3;
     private float walkTime = 1.5f;
@@ -30,13 +30,27 @@ public class FallingPlatformController : MonoBehaviour
 
         if (walkRight)
         {
-            rig.velocity = Vector2.up * speed;
+            rig.velocity = Vector2.right * speed;
         }
         else
         {
-            rig.velocity = Vector2.down * speed;
+            rig.velocity = Vector2.left * speed;
         }
     }
     
-    
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.transform.tag == "Plataform")
+        {
+            other.transform.SetParent(transform);
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D other)
+    {
+        if (other.transform.tag == "Plataform")
+        {
+            other.transform.SetParent(null);
+        }
+    }
 }
