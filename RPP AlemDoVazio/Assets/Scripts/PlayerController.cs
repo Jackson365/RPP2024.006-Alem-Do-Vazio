@@ -25,6 +25,9 @@ public class PlayerController : MonoBehaviour
 
     private float movement;
     
+    public float slowDownFactor = 0.5f;
+    private float originalSpeed;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +35,8 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
         
         GameController.instance.UpdateLives(health);
+        
+        originalSpeed = speed;
     }
 
     // Update is called once per frame
@@ -185,12 +190,27 @@ public class PlayerController : MonoBehaviour
         GameController.instance.UpdateLives(health);
     }
 
-
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.layer == 8)
         {
             isJumping = false;
+        }
+    }
+    
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("SlowMud")) // Verifique se colidiu com a zona de lentidão
+        {
+            speed *= slowDownFactor; // Reduz a velocidade
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("SlowMud")) // Quando sai da zona de lentidão
+        {
+            speed = originalSpeed; // Restaura a velocidade original
         }
     }
 }
