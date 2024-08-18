@@ -52,6 +52,12 @@ public class EnemyController : MonoBehaviour
         health -= vida;
         anim.SetTrigger("hit");
 
+        if (health == 4)
+        {
+            speed += 3;
+            walkTime += 3;
+        }
+        
         if(health <= 0)
         {
             Destroy(gameObject);

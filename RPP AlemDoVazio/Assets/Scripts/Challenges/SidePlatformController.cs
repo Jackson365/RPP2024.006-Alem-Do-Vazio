@@ -37,7 +37,7 @@ public class SidePlatformController : MonoBehaviour
             rig.velocity = Vector2.left * speed;
         }
     }
-    
+
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.transform.tag == "Plataform")

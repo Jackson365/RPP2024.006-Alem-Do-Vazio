@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     
     public GameObject bowCoragem;
     public GameObject bowCalmaria;
+    public GameObject bowDesespero;
     
     public Transform firePoint;
     
@@ -105,6 +106,7 @@ public class PlayerController : MonoBehaviour
     {
         StartCoroutine("Fire");
         StartCoroutine("FireCALM");
+        StartCoroutine("FireDesespero");
     }
 
     IEnumerator Fire()
@@ -120,11 +122,11 @@ public class PlayerController : MonoBehaviour
 
                 if (transform.rotation.y == 0)
                 {
-                    BowCoragem.GetComponent<BowController>().isRight = true;
+                    BowCoragem.GetComponent<BowSolidao>().isRight = true;
                 }
                 if (transform.rotation.y == 180)
                 {
-                    BowCoragem.GetComponent<BowController>().isRight = false;
+                    BowCoragem.GetComponent<BowSolidao>().isRight = false;
                 }
 
                 yield return new WaitForSeconds(0.2f);
@@ -152,6 +154,33 @@ public class PlayerController : MonoBehaviour
                 if (transform.rotation.y == 180)
                 {
                     BowCalmaria.GetComponent<BowCalmaria>().isRight = false;
+                }
+
+                yield return new WaitForSeconds(0.2f);
+                isFire = false;
+                anim.SetInteger("Transition", 0);
+            }
+        }
+    }
+    
+    IEnumerator FireDesespero()
+    {
+        if (Input.GetKeyDown(KeyCode.C))
+        { 
+            if(movement == 0)
+            {
+                isFire = true; 
+            
+                anim.SetInteger("Transition", 3);
+                GameObject BowDesespero = Instantiate(bowDesespero, firePoint.position, firePoint.rotation);
+
+                if (transform.rotation.y == 0)
+                {
+                    BowDesespero.GetComponent<BowDesespero>().isRight = true;
+                }
+                if (transform.rotation.y == 180)
+                {
+                    BowDesespero.GetComponent<BowDesespero>().isRight = false;
                 }
 
                 yield return new WaitForSeconds(0.2f);

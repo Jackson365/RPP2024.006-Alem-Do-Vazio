@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class BowController : MonoBehaviour
+public class BowSolidao : MonoBehaviour
 {
     private Rigidbody2D rig;
     public float speed;

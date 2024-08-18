@@ -4,107 +4,94 @@ using UnityEngine;
 
 public class EnemyShoot : MonoBehaviour
 {
-    /*public GameObject shoot; 
+    public int health;
+    public int damage = 1;
+    
+    public Transform playerPos;
+
+    public float distance;
+    public float speedEnemy;
+
+    private float timer;
+    public float walkTime;
+
+    private bool walkRight = true;
+
+    public GameObject shoot;
     public Transform firePoint;
     
-
-    public float velocidadeDoInimigo;
-    public int vidaMaximaDoInimigo;
-    public int vidaAtualDoInimigo;
+    public float tempMax; 
+    public float tempAtual; 
     
-
-    public float tempoMaximoEntreOsLasers; 
-    public float tempoAtualDosLasers; 
-
-    public bool inimigoAtirador; 
-    public bool inimigoAtivado;
-
-
-
+    public Rigidbody2D rig;
     // Start is called before the first frame update
     void Start()
     {
-        inimigoAtivado = false;
-
-        vidaAtualDoInimigo = vidaMaximaDoInimigo;
+        rig.GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if(inimigoAtirador == true && inimigoAtivado == true)
-        {
-            AtirarLaser(); 
-        }
-        
-    }
-
-    public void AtivarInimigo()
-    {
-        inimigoAtivado = true;
-    }
-    
-
-    private void AtirarLaser()
-    {
-        tempoAtualDosLasers -= Time.deltaTime; 
-
-        if(tempoAtualDosLasers <= 0)
-        {
-            Instantiate(shoot, firePoint.position, Quaternion.Euler(0f, 0f, 90f));
-            tempoAtualDosLasers = tempoMaximoEntreOsLasers;
-        }
-    }
-
-    public void MachucarInimigo(int danoParaReceber)
-    {
-        vidaAtualDoInimigo -= danoParaReceber;
-
-        if(vidaAtualDoInimigo <= 0)
-        {
-
-            Destroy(this.gameObject);
-        }
-    }
-    
-    private Rigidbody2D rig;
-    public float speed;
-
-    public int damage;
-
-    public bool isRight;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        rig = GetComponent<Rigidbody2D>();
-        Destroy(gameObject, 2f);
-    }
-
-    // Update is called once per frame
     void FixedUpdate()
     {
-        if (isRight)
+        timer += Time.deltaTime;
+
+        if (timer >= walkTime)
         {
-            rig.velocity = Vector2.right * speed;
+            walkRight = !walkRight;
+            timer = 0f;
+        }
+
+        if (walkRight)
+        {
+            transform.eulerAngles = new Vector2(0, 180);
+            rig.velocity = Vector2.right * speedEnemy;
         }
         else
         {
-            rig.velocity = Vector2.left * speed;
+            transform.eulerAngles = new Vector2(0, 0);
+            rig.velocity = Vector2.left * speedEnemy;
         }
+        
+    }
+    
+    // Update is called once per frame
+    void Update()
+    {
+        distance = Vector2.Distance(transform.position, playerPos.position);
 
+        if (distance < 5)
+        {
+            FireShoot();
+        }
     }
 
-    public void OnTriggerEnter2D(Collider2D collison)
+    private void FireShoot()
     {
-        if (collison != null)
+        tempAtual -= Time.deltaTime; 
+
+        if(tempAtual <= 0)
         {
-            if (collison.gameObject.tag == "EnemyPatroll")
-            {
-                collison.GetComponent<EnemyPatroll>().Damage(damage);
-                Destroy(gameObject);
-            }
+            Instantiate(shoot, firePoint.position, Quaternion.Euler(0f, 0f, 90f));
+            tempAtual = tempMax;
         }
-    }*/
+    }
+    
+    public void Damage (int vida)
+    {
+        health -= vida;
+        //anim.SetTrigger("hit");
+
+        if(health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+    
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            collision.gameObject.GetComponent<PlayerController>().Damage(damage);
+        }
+    }
 }
 

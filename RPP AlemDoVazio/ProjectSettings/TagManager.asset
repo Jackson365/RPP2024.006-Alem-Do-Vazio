@@ -8,6 +8,7 @@ TagManager:
   - EnemyPatroll
   - Plataform
   - SlowMud
+  - EnemyDesespero
   layers:
   - Default
   - TransparentFX
