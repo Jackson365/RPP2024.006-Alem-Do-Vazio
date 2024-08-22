@@ -229,17 +229,17 @@ public class PlayerController : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("SlowMud")) // Verifique se colidiu com a zona de lentidão
+        if (other.CompareTag("SlowMud")) 
         {
-            speed *= slowDownFactor; // Reduz a velocidade
+            speed *= slowDownFactor; 
         }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("SlowMud")) // Quando sai da zona de lentidão
+        if (other.CompareTag("SlowMud")) 
         {
-            speed = originalSpeed; // Restaura a velocidade original
+            speed = originalSpeed; 
         }
     }
 }

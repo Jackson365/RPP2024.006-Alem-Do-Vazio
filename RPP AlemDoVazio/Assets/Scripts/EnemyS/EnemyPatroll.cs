@@ -20,10 +20,13 @@ public class EnemyPatroll : MonoBehaviour
     private bool walkRight = true;
     
     public Rigidbody2D rig;
+    public Animator anim;
+    
     // Start is called before the first frame update
     void Start()
     {
-        rig.GetComponent<Rigidbody2D>();
+        rig = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     void FixedUpdate()
@@ -40,11 +43,13 @@ public class EnemyPatroll : MonoBehaviour
         {
             transform.eulerAngles = new Vector2(0, 180);
             rig.velocity = Vector2.right * speedEnemy;
+            //anim.SetInteger("transition", 0);
         }
         else
         {
             transform.eulerAngles = new Vector2(0, 0);
             rig.velocity = Vector2.left * speedEnemy;
+            //anim.SetInteger("transition", 0);
         }
         
     }

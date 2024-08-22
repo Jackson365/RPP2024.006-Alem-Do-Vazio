@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyShoot : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class EnemyShoot : MonoBehaviour
     public float walkTime;
 
     private bool walkRight = true;
-
+    
     public GameObject shoot;
     public Transform firePoint;
     
@@ -24,10 +25,13 @@ public class EnemyShoot : MonoBehaviour
     public float tempAtual; 
     
     public Rigidbody2D rig;
+    public Animator animator;
+    
     // Start is called before the first frame update
     void Start()
     {
-        rig.GetComponent<Rigidbody2D>();
+        rig = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     void FixedUpdate()
@@ -42,13 +46,15 @@ public class EnemyShoot : MonoBehaviour
 
         if (walkRight)
         {
-            transform.eulerAngles = new Vector2(0, 180);
+            transform.eulerAngles = new Vector2(0, 0);
             rig.velocity = Vector2.right * speedEnemy;
+            animator.SetInteger("Wait", 0);
         }
         else
         {
-            transform.eulerAngles = new Vector2(0, 0);
+            transform.eulerAngles = new Vector2(0, 180);
             rig.velocity = Vector2.left * speedEnemy;
+            animator.SetInteger("Wait", 0);
         }
         
     }
@@ -66,19 +72,37 @@ public class EnemyShoot : MonoBehaviour
 
     private void FireShoot()
     {
+        StartCoroutine("Shoot");
+    }
+
+    IEnumerator Shoot()
+    {
         tempAtual -= Time.deltaTime; 
 
         if(tempAtual <= 0)
         {
-            Instantiate(shoot, firePoint.position, Quaternion.Euler(0f, 0f, 90f));
+            animator.SetInteger("Wait", 1);
+            GameObject shootEnemy = Instantiate(shoot, firePoint.position, Quaternion.Euler(0f, 0f, 90f));
             tempAtual = tempMax;
+            
+            if (transform.rotation.y == 0)
+            {
+                shootEnemy.GetComponent<ShootEnemy>().isRight = true;
+            }
+            if (transform.rotation.y == 180)
+            {
+                shootEnemy.GetComponent<ShootEnemy>().isRight = false;
+            }
+
+            yield return new WaitForSeconds(0.3f);
+            animator.SetInteger("Wait", 1);
         }
     }
     
     public void Damage (int vida)
     {
         health -= vida;
-        //anim.SetTrigger("hit");
+        animator.SetInteger("Wait", 2);
 
         if(health <= 0)
         {
