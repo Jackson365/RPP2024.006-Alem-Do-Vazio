@@ -88,6 +88,8 @@ public class PlayerController : MonoBehaviour
                 rig2D.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
                 doubleJump = true;
                 isJumping = true;
+                ParticleObserver.OnParticleSpawnEvent(transform.position);
+                AudioObserver.OnPlaySfxEvent("Jump");
             }
             else
             {
@@ -96,7 +98,8 @@ public class PlayerController : MonoBehaviour
                     anim.SetInteger("Transition", 2);
                     rig2D.AddForce(new Vector2(0,jumpForce * 2), ForceMode2D.Impulse);
                     doubleJump = false;
-
+                    //ParticleObserver.OnParticleSpawnEvent(transform.position);
+                    AudioObserver.OnPlaySfxEvent("Jump");
                 }
             }
         }
@@ -205,10 +208,21 @@ public class PlayerController : MonoBehaviour
         {
             transform.position += new Vector3(1, 0, 0);
         }
+         
+                //VÃO ESTÁ EM GAMECONTROLLER
+        
+        //CHAMAR ISTO EM RECOMEÇAR!
+            //AudioObserver.OnPlayMusicEvent();
+        
+        //CHAMAR EM GAME OVER!
+            //AudioObserver.OnStopMusicEvent();
                     
         if(health <= 0)
         {
             //GameController.instance.GameOver();
+            
+            //TEMPORARIO - POR ENQUANTO QUE NÃO TEM GAME OVER
+            AudioObserver.OnStopMusicEvent();
             Destroy(gameObject);
         }
     }

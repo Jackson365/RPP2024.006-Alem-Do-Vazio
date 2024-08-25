@@ -11,6 +11,7 @@ public class CollectibleAmulet : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+                AudioObserver.OnPlaySfxEvent("Collectibles");
                 GameController.instance.UpdateAmulet(valueAmulet);
                 Destroy(gameObject);
         }
