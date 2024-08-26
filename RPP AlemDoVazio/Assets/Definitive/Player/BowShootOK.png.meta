@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b52e6a293e32c4047b372418f0745495
+guid: 2e5800365e8ccad4cbdaf5187276d009
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -81,6 +81,19 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -110,106 +123,106 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BowShoot_0
+      name: BowShootOK_0
       rect:
         serializedVersion: 2
-        x: 18
-        y: 127
-        width: 12
-        height: 14
+        x: 35
+        y: 162
+        width: 25
+        height: 21
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a078d137a45c524a8471814535d1087
-      internalID: 1684949126
+      spriteID: 7da38d5e83af513448f0ec6981c345c2
+      internalID: -744998641
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BowShoot_1
+      name: BowShootOK_1
       rect:
         serializedVersion: 2
-        x: 67
-        y: 127
-        width: 12
-        height: 14
+        x: 131
+        y: 162
+        width: 25
+        height: 21
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 106dbaff935bf7940a79f261eae726d9
-      internalID: 2042928154
+      spriteID: 1ba0195c0c66f9d499250b2c4e67fb0a
+      internalID: 320219492
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BowShoot_2
+      name: BowShootOK_2
       rect:
         serializedVersion: 2
-        x: 18
-        y: 73
-        width: 12
-        height: 15
+        x: 227
+        y: 162
+        width: 25
+        height: 21
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3e33219926047c3438fa3bd27bf72b50
-      internalID: 1440391949
+      spriteID: 346ef1008fce7ee4cbe3c4543356bb14
+      internalID: 554736464
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BowShoot_3
+      name: BowShootOK_3
       rect:
         serializedVersion: 2
-        x: 66
-        y: 73
-        width: 12
-        height: 14
+        x: 35
+        y: 0
+        width: 25
+        height: 21
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 73242efd9bc6af64b8e28c5f8d5eebe0
-      internalID: 823443093
+      spriteID: 1993305d01a2454409b1a7bb7a696710
+      internalID: 1111026690
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BowShoot_4
+      name: BowShootOK_4
       rect:
         serializedVersion: 2
-        x: 17
-        y: 19
-        width: 13
-        height: 14
+        x: 131
+        y: 0
+        width: 25
+        height: 21
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a7a1194c7f8de994fad91c706fdd5564
-      internalID: 1019808160
+      spriteID: 6d24f7a3296f6c6489ccbbeeb39b12af
+      internalID: -535269297
       vertices: []
       indices: 
       edges: []
@@ -225,11 +238,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      BowShoot_0: 1684949126
-      BowShoot_1: 2042928154
-      BowShoot_2: 1440391949
-      BowShoot_3: 823443093
-      BowShoot_4: 1019808160
+      BowShootOK_0: -744998641
+      BowShootOK_1: 320219492
+      BowShootOK_2: 554736464
+      BowShootOK_3: 1111026690
+      BowShootOK_4: -535269297
+      BowShootOK_5: -544966711
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
