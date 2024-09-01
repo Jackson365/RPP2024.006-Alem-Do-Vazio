@@ -3442,6 +3442,7 @@ GameObject:
   - component: {fileID: 1589864070}
   - component: {fileID: 1589864069}
   - component: {fileID: 1589864071}
+  - component: {fileID: 1589864072}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -3492,6 +3493,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabSmoke: {fileID: 3958194304281762282, guid: ed6550a2142d19d499542b93e85522ee, type: 3}
+--- !u!114 &1589864072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1589864068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8807cd67a19fa54c9edc826ffbdc9f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthText: {fileID: 1692174215}
 --- !u!1 &1599231563
 GameObject:
   m_ObjectHideFlags: 0
@@ -3525,7 +3539,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59e25dd8281c9914bb105167c89bbebe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
   speed: 5
   jumpForce: 8
   bowCoragem: {fileID: 270447463030960703, guid: 6a5a107ffba1a994990b9a1dbd242815, type: 3}

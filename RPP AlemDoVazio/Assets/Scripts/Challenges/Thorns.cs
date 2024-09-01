@@ -12,17 +12,18 @@ public class Thorns : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            other.gameObject.GetComponent<PlayerController>().Damage(damage);
+            HealthObserver.TakeDamage(damage);
             
             _playerController.kbCount = _playerController.kbTime;
             if (other.transform.position.x <= transform.position.x)
             {
                 _playerController.isKnockRitgh = true;
             }
-            if (other.transform.position.x > transform.position.x)
+            else
             {
-                _playerController.isKnockRitgh = false;
-            }
+                _playerController.isKnockRitgh = false; 
+            } 
         }
     }
 }
+

@@ -10,6 +10,8 @@ public class CollectibleHeart : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            HealthObserver.Heal(vHeart);
+            
             other.gameObject.GetComponent<PlayerController>().IncreaseLife(vHeart);
             Destroy(gameObject);
         }

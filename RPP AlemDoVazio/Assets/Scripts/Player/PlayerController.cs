@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public int health = 6;
+    //public int health = 6;
     public float speed = 5;
     public float jumpForce = 8;
 
@@ -40,9 +40,7 @@ public class PlayerController : MonoBehaviour
     {
         rig2D = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        
-        GameController.instance.UpdateLives(health);
-        
+                
         originalSpeed = speed;
     }
 
@@ -223,8 +221,8 @@ public class PlayerController : MonoBehaviour
     
     public void Damage(int dmg)
     {
-        health -= dmg;
-        GameController.instance.UpdateLives(health);
+        //health -= dmg;
+        //GameController.instance.UpdateLives(health);
         anim.SetTrigger("hit");
         
         if (transform.rotation.y == 0)
@@ -245,20 +243,20 @@ public class PlayerController : MonoBehaviour
         //CHAMAR EM GAME OVER!
             //AudioObserver.OnStopMusicEvent();
                     
-        if(health <= 0)
-        {
+        //if(health <= 0)
+        //{
             //GameController.instance.GameOver();
             
             //TEMPORARIO - POR ENQUANTO QUE NÃO TEM GAME OVER
             AudioObserver.OnStopMusicEvent();
             Destroy(gameObject);
-        }
+        //}
     }
     
     public void IncreaseLife(int value)
     {
-        health += value;
-        GameController.instance.UpdateLives(health);
+        //health += value;
+        //GameController.instance.UpdateLives(health);
     }
 
     private void OnCollisionEnter2D(Collision2D other)
