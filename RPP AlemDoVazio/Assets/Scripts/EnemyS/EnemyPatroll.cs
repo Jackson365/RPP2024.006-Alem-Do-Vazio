@@ -22,6 +22,8 @@ public class EnemyPatroll : MonoBehaviour
     private bool isAttacking = false; // Variável para controlar se o inimigo está atacando
     
     public Rigidbody2D rig;
+
+    public PlayerController _playerController;
     
     void Start()
     {
@@ -95,6 +97,16 @@ public class EnemyPatroll : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             isAttacking = true;
+            
+            _playerController.kbCount = _playerController.kbTime;
+            if (collision.transform.position.x <= transform.position.x)
+            {
+                _playerController.isKnockRitgh = true;
+            }
+            if (collision.transform.position.x > transform.position.x)
+            {
+                _playerController.isKnockRitgh = false;
+            }
         }
     }
 }

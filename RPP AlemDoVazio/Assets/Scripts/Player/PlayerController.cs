@@ -28,6 +28,12 @@ public class PlayerController : MonoBehaviour
     
     public float slowDownFactor = 0.5f;
     private float originalSpeed;
+
+    public float kbForce;
+    public float kbCount;
+    public float kbTime;
+
+    public bool isKnockRitgh;
     
     // Start is called before the first frame update
     void Start()
@@ -43,7 +49,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Move();
+        KnockLogig();
         Jump();
         Bow(); 
     }
@@ -78,6 +84,28 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    void KnockLogig()
+    {
+        if (kbCount < 0)
+        {
+            Move();
+        }
+        else
+        {
+            if (isKnockRitgh == true)
+            {
+                rig2D.velocity = new Vector2(-kbForce, kbForce);
+            }
+            
+            if (isKnockRitgh == false)
+            {
+                rig2D.velocity = new Vector2(kbForce, kbForce);
+            }
+        }
+
+        kbCount -= Time.deltaTime;
+    }
+    
     void Jump()
     {
         if (Input.GetButtonDown("Jump"))

@@ -16,6 +16,8 @@ public class EnemyController : MonoBehaviour
     private Rigidbody2D rig;
     private Animator anim;
 
+    public PlayerController _playerController;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -68,6 +70,16 @@ public class EnemyController : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             collision.gameObject.GetComponent<PlayerController>().Damage(damage);
+            
+            _playerController.kbCount = _playerController.kbTime;
+            if (collision.transform.position.x <= transform.position.x)
+            {
+                _playerController.isKnockRitgh = true;
+            }
+            if (collision.transform.position.x > transform.position.x)
+            {
+                _playerController.isKnockRitgh = false;
+            }
         }
     }
 }
