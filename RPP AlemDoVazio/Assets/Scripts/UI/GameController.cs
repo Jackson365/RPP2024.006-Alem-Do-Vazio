@@ -9,7 +9,6 @@ using Unity.VisualScripting;
 public class GameController : MonoBehaviour
 {
     public static GameController instance;
-    public Text healthText;
 
     private int scoreAmulet;
     public Text amuleText;
@@ -42,11 +41,6 @@ public class GameController : MonoBehaviour
         PlayerPrefs.SetInt("score", scoreAmulet + totalAmulet);
     }
     
-    public void UpdateLives(int value)
-    {
-        healthText.text = "x " + value.ToString();
-    }
-
     void Update(){
         if(Input.GetKeyDown(KeyCode.P)){
             SceneManager.LoadScene("Level2");

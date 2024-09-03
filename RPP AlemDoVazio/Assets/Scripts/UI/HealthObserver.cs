@@ -20,14 +20,12 @@ public static class HealthObserver
     public static void TakeDamage(int amount)
     {
         currentHealth -= amount;
-        currentHealth = Math.Max(currentHealth, 0); 
         NotifyHealthChange();
     }
 
     public static void Heal(int amount)
     {
         currentHealth += amount;
-        currentHealth = Math.Min(currentHealth, maxHealth);
         NotifyHealthChange();
     }
 

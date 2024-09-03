@@ -4,18 +4,20 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+    [Header("Atributtes")]
     public float speed;
-    public float walkTime;
-
-    private bool walkRight = true;
-
     public int health;
     public int damage = 1;
     
-    private float timer;
+    [Header("Components")]
     private Rigidbody2D rig;
     private Animator anim;
-
+    
+    [Header("Others")]
+    private float timer;
+    private bool walkRight = true;
+    public float walkTime;
+    
     public PlayerController _playerController;
 
     // Start is called before the first frame update
@@ -69,7 +71,7 @@ public class EnemyController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            collision.gameObject.GetComponent<PlayerController>().Damage(damage);
+            HealthObserver.TakeDamage(damage);
             
             _playerController.kbCount = _playerController.kbTime;
             if (collision.transform.position.x <= transform.position.x)

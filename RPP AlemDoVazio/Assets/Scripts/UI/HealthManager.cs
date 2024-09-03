@@ -7,9 +7,10 @@ using UnityEngine.UI;
 public class HealthManager : MonoBehaviour
 {
     public static HealthManager healthManager;
-
     public Text healthText;
 
+    public GameObject player;
+    
     private void Awake()
     {
         healthManager = this;
@@ -23,16 +24,32 @@ public class HealthManager : MonoBehaviour
     private void OnEnable()
     {
         HealthObserver.currentHealthEvent += UpdateHealthText;
+        HealthObserver.currentHealthEvent += CheckPlayerHealth;
     }
 
     private void OnDisable()
     {
         HealthObserver.currentHealthEvent -= UpdateHealthText;
+        HealthObserver.currentHealthEvent -= CheckPlayerHealth;
     }
 
     private void UpdateHealthText(int currentHealth)
     {
         healthText.text = currentHealth.ToString();
+    }
+    
+    private void CheckPlayerHealth(int currentHealth)
+    {
+        if (currentHealth <= 0)
+        {
+            DestroyPlayer();
+        }
+    }
+
+    private void DestroyPlayer()
+    {
+        AudioObserver.OnStopMusicEvent();
+        Destroy(player);
     }
 }
 

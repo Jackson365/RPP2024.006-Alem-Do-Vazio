@@ -5,37 +5,37 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    //public int health = 6;
+    [Header("Atributtes")] 
     public float speed = 5;
     public float jumpForce = 8;
-
     
+    private float movement;
+    
+    [Header("Components")]
+    public Transform firePoint;
+    private Rigidbody2D rig2D;
+    private Animator anim;
+    
+    [Header("Others")]
+    private bool isJumping;
+    private bool doubleJump;
+    private bool isFire;
+    
+    [Header("Bows")]
     public GameObject bowCoragem;
     public GameObject bowCalmaria;
     public GameObject bowDesespero;
     
-    public Transform firePoint;
-    
-    
-    private Rigidbody2D rig2D;
-    private Animator anim;
-
-    private bool isJumping;
-    private bool doubleJump;
-    private bool isFire;
-
-    private float movement;
-    
+    [Header("SlowMud")] 
     public float slowDownFactor = 0.5f;
     private float originalSpeed;
-
+    
+    [Header("KnockBack")] 
     public float kbForce;
     public float kbCount;
     public float kbTime;
-
     public bool isKnockRitgh;
     
-    // Start is called before the first frame update
     void Start()
     {
         rig2D = GetComponent<Rigidbody2D>();
@@ -43,8 +43,7 @@ public class PlayerController : MonoBehaviour
                 
         originalSpeed = speed;
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         KnockLogig();
@@ -219,46 +218,14 @@ public class PlayerController : MonoBehaviour
         }
     }
     
-    public void Damage(int dmg)
-    {
-        //health -= dmg;
-        //GameController.instance.UpdateLives(health);
-        anim.SetTrigger("hit");
+    //VÃO ESTÁ EM GAMECONTROLLER
         
-        if (transform.rotation.y == 0)
-        {
-            transform.position += new Vector3(-1, 0, 0);
-        }
-                    
-        if (transform.rotation.y == 180)
-        {
-            transform.position += new Vector3(1, 0, 0);
-        }
-         
-                //VÃO ESTÁ EM GAMECONTROLLER
+    //CHAMAR ISTO EM RECOMEÇAR!
+    //AudioObserver.OnPlayMusicEvent();
         
-        //CHAMAR ISTO EM RECOMEÇAR!
-            //AudioObserver.OnPlayMusicEvent();
-        
-        //CHAMAR EM GAME OVER!
-            //AudioObserver.OnStopMusicEvent();
-                    
-        //if(health <= 0)
-        //{
-            //GameController.instance.GameOver();
-            
-            //TEMPORARIO - POR ENQUANTO QUE NÃO TEM GAME OVER
-            AudioObserver.OnStopMusicEvent();
-            Destroy(gameObject);
-        //}
-    }
+    //CHAMAR EM GAME OVER!
+    //AudioObserver.OnStopMusicEvent()
     
-    public void IncreaseLife(int value)
-    {
-        //health += value;
-        //GameController.instance.UpdateLives(health);
-    }
-
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.layer == 8)
@@ -269,17 +236,17 @@ public class PlayerController : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("SlowMud")) // Verifique se colidiu com a zona de lentidão
+        if (other.CompareTag("SlowMud")) 
         {
-            speed *= slowDownFactor; // Reduz a velocidade
+            speed *= slowDownFactor;
         }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("SlowMud")) // Quando sai da zona de lentidão
+        if (other.CompareTag("SlowMud")) 
         {
-            speed = originalSpeed; // Restaura a velocidade original
+            speed = originalSpeed; 
         }
     }
 }

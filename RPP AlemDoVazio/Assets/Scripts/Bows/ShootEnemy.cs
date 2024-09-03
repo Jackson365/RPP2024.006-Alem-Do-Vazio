@@ -5,13 +5,14 @@ using UnityEngine;
 
 public class ShootEnemy : MonoBehaviour
 {
-    private Rigidbody2D rig;
+    [Header("Atributtes")]
     public float speed;
-
     public int damage;
-
+    
+    [Header("Others")]
+    private Rigidbody2D rig;
     public bool isRight;
-    // Start is called before the first frame update
+    
     void Start()
     {
         rig = GetComponent<Rigidbody2D>();
@@ -23,7 +24,6 @@ public class ShootEnemy : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0, 0);
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         if (isRight)
@@ -43,7 +43,7 @@ public class ShootEnemy : MonoBehaviour
         {
             if (collison.gameObject.tag == "Player")
             {
-                collison.GetComponent<PlayerController>().Damage(damage);
+                HealthObserver.TakeDamage(damage);
                 Destroy(gameObject);
             }
         }

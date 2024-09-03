@@ -4,28 +4,27 @@ using UnityEngine;
 
 public class EnemyShoot : MonoBehaviour
 {
+    [Header("Atributtes")]
     public int health;
     public int damage = 1;
-    
-    public Transform playerPos;
-
     public float distance;
     public float speedEnemy;
-
-    private float timer;
-    public float walkTime;
-
-    private bool walkRight = true;
-
+    
+    [Header("Components")]
+    public Transform playerPos;
     public GameObject shoot;
     public Transform firePoint;
-    
+    public Rigidbody2D rig;
+
+    [Header("Others")]
+    private float timer;
+    public float walkTime;
+    private bool walkRight = true;
     public float tempMax; 
     public float tempAtual; 
     
-    public Rigidbody2D rig;
     public PlayerController _playerController;
-    // Start is called before the first frame update
+   
     void Start()
     {
         rig.GetComponent<Rigidbody2D>();
@@ -53,8 +52,7 @@ public class EnemyShoot : MonoBehaviour
         }
         
     }
-    
-    // Update is called once per frame
+   
     void Update()
     {
         distance = Vector2.Distance(transform.position, playerPos.position);
@@ -79,8 +77,7 @@ public class EnemyShoot : MonoBehaviour
     public void Damage (int vida)
     {
         health -= vida;
-        //anim.SetTrigger("hit");
-
+        
         if(health <= 0)
         {
             Destroy(gameObject);
@@ -91,7 +88,7 @@ public class EnemyShoot : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            collision.gameObject.GetComponent<PlayerController>().Damage(damage);
+            HealthObserver.TakeDamage(damage);
             
             _playerController.kbCount = _playerController.kbTime;
             if (collision.transform.position.x <= transform.position.x)

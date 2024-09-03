@@ -856,10 +856,10 @@ MonoBehaviour:
   damage: 1
   playerPos: {fileID: 1599231568}
   _position: []
+  rig: {fileID: 221494094}
   speedEnemy: 5
   waitingTime: 0
   attackRange: 1
-  rig: {fileID: 221494094}
   _playerController: {fileID: 0}
 --- !u!61 &221494093
 BoxCollider2D:
@@ -1449,10 +1449,10 @@ MonoBehaviour:
   _position:
   - {fileID: 896639958}
   - {fileID: 1399448617}
+  rig: {fileID: 510862468}
   speedEnemy: 5
   waitingTime: 0.5
   attackRange: 1
-  rig: {fileID: 510862468}
   _playerController: {fileID: 1599231564}
 --- !u!1 &613071434
 GameObject:
@@ -2818,9 +2818,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  walkTime: 1
   health: 5
   damage: 1
+  walkTime: 1
   _playerController: {fileID: 1599231564}
 --- !u!95 &1283952946
 Animator:
@@ -3349,15 +3349,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1
   damage: 1
-  playerPos: {fileID: 1599231568}
   distance: 5
   speedEnemy: 3
-  walkTime: 2
+  playerPos: {fileID: 1599231568}
   shoot: {fileID: 5077816878725397238, guid: eb661c2b8450b0c44a846971840b2160, type: 3}
   firePoint: {fileID: 1154603576}
+  rig: {fileID: 1536151839}
+  walkTime: 2
   tempMax: 0.5
   tempAtual: 0
-  rig: {fileID: 1536151839}
   _playerController: {fileID: 1599231564}
 --- !u!61 &1536151838
 BoxCollider2D:
@@ -3462,7 +3462,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee5fdfa02069fad4c886f5797b742302, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthText: {fileID: 1692174215}
   amuleText: {fileID: 1369976695}
 --- !u!4 &1589864070
 Transform:
@@ -3506,6 +3505,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthText: {fileID: 1692174215}
+  player: {fileID: 1599231563}
 --- !u!1 &1599231563
 GameObject:
   m_ObjectHideFlags: 0
@@ -3541,12 +3541,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   jumpForce: 8
+  firePoint: {fileID: 353128401}
   bowCoragem: {fileID: 270447463030960703, guid: 6a5a107ffba1a994990b9a1dbd242815, type: 3}
   bowCalmaria: {fileID: 5049081297024909926, guid: 92997dada7ed8e94bbc7ebd5c4705599, type: 3}
   bowDesespero: {fileID: 5049081297024909926, guid: 3edc3f078f3212f468142b5c4dca0056, type: 3}
-  firePoint: {fileID: 353128401}
   slowDownFactor: 0.5
-  kbForce: 6
+  kbForce: 3
   kbCount: 0
   kbTime: 0.2
   isKnockRitgh: 1
