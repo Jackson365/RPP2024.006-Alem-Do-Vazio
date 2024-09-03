@@ -586,7 +586,7 @@ Transform:
   m_GameObject: {fileID: 62261144}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.4, y: -2.2, z: -10}
+  m_LocalPosition: {x: 69.3, y: -37.9, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3575,15 +3575,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1
   damage: 1
+  playerPos: {fileID: 1599231568}
   distance: 5
   speedEnemy: 3
-  playerPos: {fileID: 1599231568}
+  walkTime: 2
   shoot: {fileID: 5077816878725397238, guid: eb661c2b8450b0c44a846971840b2160, type: 3}
   firePoint: {fileID: 1154603576}
-  rig: {fileID: 1536151839}
-  walkTime: 2
   tempMax: 0.5
   tempAtual: 0
+  rig: {fileID: 1536151839}
+  animator: {fileID: 0}
   _playerController: {fileID: 1599231564}
 --- !u!61 &1536151838
 BoxCollider2D:
@@ -4014,7 +4015,7 @@ Transform:
   m_GameObject: {fileID: 1599231563}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.4, y: -2.2, z: 0}
+  m_LocalPosition: {x: 69.3, y: -37.9, z: 0}
   m_LocalScale: {x: 8.7782, y: 8.7782, z: 8.7782}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4979,7 +4980,7 @@ Transform:
   m_GameObject: {fileID: 2145247460}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.4, y: -2.2, z: -10}
+  m_LocalPosition: {x: 69.3, y: -37.9, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
