@@ -48,13 +48,13 @@ public class EnemyShoot : MonoBehaviour
 
         if (walkRight)
         {
-            transform.eulerAngles = new Vector2(0, 0);
+            transform.eulerAngles = new Vector2(0, 180);
             rig.velocity = Vector2.right * speedEnemy;
             //animator.SetInteger("Wait", 0);
         }
         else
         {
-            transform.eulerAngles = new Vector2(0, 180);
+            transform.eulerAngles = new Vector2(0, 0);
             rig.velocity = Vector2.left * speedEnemy;
             //animator.SetInteger("Wait", 0);
         }
