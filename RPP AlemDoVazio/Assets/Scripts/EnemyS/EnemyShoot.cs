@@ -25,7 +25,7 @@ public class EnemyShoot : MonoBehaviour
     public float tempAtual; 
     
     public Rigidbody2D rig;
-    public Animator animator;
+    //public Animator animator;
 
     public PlayerController _playerController;
     
@@ -33,7 +33,7 @@ public class EnemyShoot : MonoBehaviour
     void Start()
     {
         rig = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
+        //animator = GetComponent<Animator>();
     }
 
     void FixedUpdate()
@@ -50,13 +50,13 @@ public class EnemyShoot : MonoBehaviour
         {
             transform.eulerAngles = new Vector2(0, 0);
             rig.velocity = Vector2.right * speedEnemy;
-            animator.SetInteger("Wait", 0);
+            //animator.SetInteger("Wait", 0);
         }
         else
         {
             transform.eulerAngles = new Vector2(0, 180);
             rig.velocity = Vector2.left * speedEnemy;
-            animator.SetInteger("Wait", 0);
+            //animator.SetInteger("Wait", 0);
         }
         
     }
@@ -83,7 +83,7 @@ public class EnemyShoot : MonoBehaviour
 
         if(tempAtual <= 0)
         {
-            animator.SetInteger("Wait", 1);
+            //animator.SetInteger("Wait", 1);
             GameObject shootEnemy = Instantiate(shoot, firePoint.position, Quaternion.Euler(0f, 0f, 90f));
             tempAtual = tempMax;
             
@@ -97,14 +97,14 @@ public class EnemyShoot : MonoBehaviour
             }
 
             yield return new WaitForSeconds(0.3f);
-            animator.SetInteger("Wait", 1);
+            //animator.SetInteger("Wait", 1);
         }
     }
     
     public void Damage (int vida)
     {
         health -= vida;
-        animator.SetInteger("Wait", 2);
+        //animator.SetInteger("Wait", 2);
 
         if(health <= 0)
         {
