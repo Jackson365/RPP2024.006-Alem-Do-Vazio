@@ -25,6 +25,10 @@ public class EnemyPatroll : MonoBehaviour
     private float time;
     private bool isAttacking = false; // Variável para controlar se o inimigo está atacando
     
+    // Novo: cooldown do ataque
+    public float attackCooldown = 0.5f;  // Tempo entre os ataques
+    private float nextAttackTime = 0f; // Próximo tempo permitido para atacar
+    
     public PlayerController _playerController;
     
     void Start()
@@ -71,7 +75,12 @@ public class EnemyPatroll : MonoBehaviour
 
         if (distance <= attackRange)
         {
-            HealthObserver.TakeDamage(damage);
+            // Verifica se já passou o tempo suficiente para um novo ataque
+            if (Time.time >= nextAttackTime)
+            {
+                HealthObserver.TakeDamage(damage);
+                nextAttackTime = Time.time + attackCooldown; // Define o próximo tempo de ataque
+            }
         }
         else if (distance > attackRange && distance < 4)
         {
@@ -98,7 +107,7 @@ public class EnemyPatroll : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             isAttacking = true;
-            
+
             _playerController.kbCount = _playerController.kbTime;
             if (collision.transform.position.x <= transform.position.x)
             {

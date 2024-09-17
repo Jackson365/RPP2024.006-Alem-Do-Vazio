@@ -935,6 +935,7 @@ MonoBehaviour:
   speedEnemy: 5
   waitingTime: 0
   attackRange: 1
+  attackCooldown: 1
   _playerController: {fileID: 0}
 --- !u!61 &221494093
 BoxCollider2D:
@@ -1564,6 +1565,7 @@ MonoBehaviour:
   speedEnemy: 5
   waitingTime: 0.5
   attackRange: 1
+  attackCooldown: 1
   _playerController: {fileID: 1599231564}
 --- !u!1 &613071434
 GameObject:
@@ -3877,7 +3879,7 @@ MonoBehaviour:
   bowCalmaria: {fileID: 5049081297024909926, guid: 92997dada7ed8e94bbc7ebd5c4705599, type: 3}
   bowDesespero: {fileID: 5049081297024909926, guid: 3edc3f078f3212f468142b5c4dca0056, type: 3}
   slowDownFactor: 0.5
-  kbForce: 3
+  kbForce: 6
   kbCount: 0
   kbTime: 0.2
   isKnockRitgh: 1
