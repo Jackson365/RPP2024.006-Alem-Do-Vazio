@@ -586,7 +586,7 @@ Transform:
   m_GameObject: {fileID: 62261144}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 66.6, y: -38.3, z: -10}
+  m_LocalPosition: {x: -7.8, y: -3.6, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3554,7 +3554,7 @@ Transform:
   m_GameObject: {fileID: 1536151834}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 83.88, y: -39.11, z: 0}
+  m_LocalPosition: {x: 83.88, y: -39.08, z: 0}
   m_LocalScale: {x: 7.9271903, y: 7.9271903, z: 7.9271903}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3573,9 +3573,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29a98efe801f1f144923ef2a27792c52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1
+  health: 4
   damage: 1
   playerPos: {fileID: 1599231568}
+  _playerController: {fileID: 1599231564}
   distance: 5
   speedEnemy: 3
   walkTime: 2
@@ -3584,7 +3585,6 @@ MonoBehaviour:
   tempMax: 0.5
   tempAtual: 0
   rig: {fileID: 1536151839}
-  _playerController: {fileID: 1599231564}
 --- !u!61 &1536151838
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3617,7 +3617,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.038050376}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -3628,7 +3628,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.16, y: 0.16}
+  m_Size: {x: 0.16, y: 0.09975289}
   m_EdgeRadius: 0
 --- !u!50 &1536151839
 Rigidbody2D:
@@ -4014,7 +4014,7 @@ Transform:
   m_GameObject: {fileID: 1599231563}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 66.6, y: -38.3, z: 0}
+  m_LocalPosition: {x: -7.8, y: -3.6, z: 0}
   m_LocalScale: {x: 8.7782, y: 8.7782, z: 8.7782}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4979,7 +4979,7 @@ Transform:
   m_GameObject: {fileID: 2145247460}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 66.6, y: -38.3, z: -10}
+  m_LocalPosition: {x: -7.8, y: -3.6, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

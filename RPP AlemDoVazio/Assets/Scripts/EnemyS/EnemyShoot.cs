@@ -27,7 +27,6 @@ public class EnemyShoot : MonoBehaviour
     
     public Rigidbody2D rig;
     
-    
     // Start is called before the first frame update
     void Start()
     {
@@ -44,17 +43,17 @@ public class EnemyShoot : MonoBehaviour
             timer = 0f;
         }
 
+        // Altera a rotação para definir a direção que o inimigo está olhando
         if (walkRight)
         {
-            transform.eulerAngles = new Vector2(0, 180);
+            transform.rotation = Quaternion.Euler(0, 180, 0);  // Olha para a direita
             rig.velocity = Vector2.right * speedEnemy;
         }
         else
         {
-            transform.eulerAngles = new Vector2(0, 0);
+            transform.rotation = Quaternion.Euler(0, 0, 0); // Olha para a esquerda
             rig.velocity = Vector2.left * speedEnemy;
         }
-
     }
     
     // Update is called once per frame
@@ -77,18 +76,20 @@ public class EnemyShoot : MonoBehaviour
     {
         tempAtual -= Time.deltaTime; 
 
-        if(tempAtual <= 0)
+        if (tempAtual <= 0)
         {
-            GameObject shootEnemy = Instantiate(shoot, firePoint.position, Quaternion.Euler(0f, 0f, 90f));
+            // Cria o projétil no firePoint
+            GameObject shootEnemy = Instantiate(shoot, firePoint.position, Quaternion.Euler(0f, 0f, -90f));
             tempAtual = tempMax;
-            
-            if (transform.rotation.y == 0)
+
+            // Verifica a direção usando a rotação Y
+            if (transform.rotation.eulerAngles.y == 180)
             {
-                shootEnemy.GetComponent<ShootEnemy>().isRight = false;
+                shootEnemy.GetComponent<ShootEnemy>().isRight = true;  // Atira para a direita
             }
-            if (transform.rotation.y == 180)
+            else
             {
-                shootEnemy.GetComponent<ShootEnemy>().isRight = true;
+                shootEnemy.GetComponent<ShootEnemy>().isRight = false; // Atira para a esquerda
             }
 
             yield return new WaitForSeconds(0.3f);
@@ -99,7 +100,7 @@ public class EnemyShoot : MonoBehaviour
     {
         health -= vida;
 
-        if(health <= 0)
+        if (health <= 0)
         {
             Destroy(gameObject);
         }
@@ -123,4 +124,3 @@ public class EnemyShoot : MonoBehaviour
         }
     }
 }
-
