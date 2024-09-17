@@ -9,6 +9,7 @@ public class EnemyShoot : MonoBehaviour
     public int damage = 1;
     
     public Transform playerPos;
+    public PlayerController _playerController;
 
     public float distance;
     public float speedEnemy;
@@ -25,15 +26,12 @@ public class EnemyShoot : MonoBehaviour
     public float tempAtual; 
     
     public Rigidbody2D rig;
-    //public Animator animator;
-
-    public PlayerController _playerController;
+    
     
     // Start is called before the first frame update
     void Start()
     {
         rig = GetComponent<Rigidbody2D>();
-        //animator = GetComponent<Animator>();
     }
 
     void FixedUpdate()
@@ -50,15 +48,13 @@ public class EnemyShoot : MonoBehaviour
         {
             transform.eulerAngles = new Vector2(0, 180);
             rig.velocity = Vector2.right * speedEnemy;
-            //animator.SetInteger("Wait", 0);
         }
         else
         {
             transform.eulerAngles = new Vector2(0, 0);
             rig.velocity = Vector2.left * speedEnemy;
-            //animator.SetInteger("Wait", 0);
         }
-        
+
     }
     
     // Update is called once per frame
@@ -83,28 +79,25 @@ public class EnemyShoot : MonoBehaviour
 
         if(tempAtual <= 0)
         {
-            //animator.SetInteger("Wait", 1);
             GameObject shootEnemy = Instantiate(shoot, firePoint.position, Quaternion.Euler(0f, 0f, 90f));
             tempAtual = tempMax;
             
             if (transform.rotation.y == 0)
             {
-                shootEnemy.GetComponent<ShootEnemy>().isRight = true;
+                shootEnemy.GetComponent<ShootEnemy>().isRight = false;
             }
             if (transform.rotation.y == 180)
             {
-                shootEnemy.GetComponent<ShootEnemy>().isRight = false;
+                shootEnemy.GetComponent<ShootEnemy>().isRight = true;
             }
 
             yield return new WaitForSeconds(0.3f);
-            //animator.SetInteger("Wait", 1);
         }
     }
     
     public void Damage (int vida)
     {
         health -= vida;
-        //animator.SetInteger("Wait", 2);
 
         if(health <= 0)
         {

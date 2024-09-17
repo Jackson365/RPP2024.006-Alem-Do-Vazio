@@ -5,14 +5,13 @@ using UnityEngine;
 
 public class ShootEnemy : MonoBehaviour
 {
-    [Header("Atributtes")]
+    private Rigidbody2D rig;
+    
     public float speed;
     public int damage;
     
-    [Header("Others")]
-    private Rigidbody2D rig;
     public bool isRight;
-    
+    // Start is called before the first frame update
     void Start()
     {
         rig = GetComponent<Rigidbody2D>();
@@ -25,12 +24,12 @@ public class ShootEnemy : MonoBehaviour
         if (isRight)
         {
             rig.velocity = Vector2.right * speed;
-            transform.rotation = Quaternion.Euler(0, 180, 0);
+            transform.rotation = Quaternion.Euler(0, 0, 0);
         }
         else
         {
             rig.velocity = Vector2.left * speed;
-            transform.rotation = Quaternion.Euler(0, 0, 0);
+            transform.rotation = Quaternion.Euler(0, 180, 0);
         }
         
     }
