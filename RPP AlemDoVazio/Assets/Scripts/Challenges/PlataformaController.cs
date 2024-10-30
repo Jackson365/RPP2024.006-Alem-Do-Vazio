@@ -6,7 +6,7 @@ using UnityEngine;
 public class FallingPlatformController : MonoBehaviour
 {
     private float speed = 3;
-    private float walkTime = 1.5f;
+    public float walkTime;
     
     private bool walkRight = true;
     
