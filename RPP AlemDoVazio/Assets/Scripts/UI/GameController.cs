@@ -14,6 +14,11 @@ public class GameController : MonoBehaviour
     public Text amuleText;
     private int totalAmulet;
 
+    public GameObject pauseObj;
+    public GameObject GameOverObj;
+
+    private bool isPaused;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -42,8 +47,38 @@ public class GameController : MonoBehaviour
     }
     
     void Update(){
-        if(Input.GetKeyDown(KeyCode.P)){
-            SceneManager.LoadScene("Level2");
+        
+        PauseGame();
+    }
+
+    public void PauseGame()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            isPaused = !isPaused;
+            pauseObj.SetActive(isPaused);
         }
+
+        if (isPaused)
+        {
+            Time.timeScale = 0;
+        }
+        else
+        {
+            Time.timeScale = 1;
+        }
+    }
+
+    public void GameOver()
+    {
+        GameOverObj.SetActive(true);
+    }
+    
+
+    public void RestartGame()
+    {
+        HealthObserver.ResetHealth();
+        SceneManager.LoadScene(1);
+        GameOverObj.SetActive(false);
     }
 }

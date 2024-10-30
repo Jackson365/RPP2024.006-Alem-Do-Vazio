@@ -43,6 +43,7 @@ public class HealthManager : MonoBehaviour
         if (currentHealth <= 0)
         {
             DestroyPlayer();
+            GameController.instance.GameOver();
         }
     }
 

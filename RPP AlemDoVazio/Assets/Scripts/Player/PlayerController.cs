@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
     public GameObject bowDesespero;
     
     [Header("SlowMud")] 
-    public float slowDownFactor = 0.5f;
+    public float slowDownFactor = 1f;
     private float originalSpeed;
     
     [Header("KnockBack")] 
@@ -231,11 +231,6 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.layer == 8)
         {
             isJumping = false;
-        }
-        
-        if (other.collider.CompareTag("Void"))
-        {
-            Destroy(gameObject);
         }
     }
     

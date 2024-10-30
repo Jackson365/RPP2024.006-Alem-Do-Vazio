@@ -29,6 +29,12 @@ public static class HealthObserver
         NotifyHealthChange();
     }
 
+    public static void ResetHealth()
+    {
+        currentHealth = maxHealth;
+        NotifyHealthChange();
+    }
+
     private static void NotifyHealthChange()
     {
         currentHealthEvent?.Invoke(currentHealth);
