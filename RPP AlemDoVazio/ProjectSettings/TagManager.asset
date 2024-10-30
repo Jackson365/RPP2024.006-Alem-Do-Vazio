@@ -9,6 +9,7 @@ TagManager:
   - Plataform
   - SlowMud
   - EnemyDesespero
+  - Void
   layers:
   - Default
   - TransparentFX

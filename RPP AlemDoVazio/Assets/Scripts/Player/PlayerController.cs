@@ -232,6 +232,11 @@ public class PlayerController : MonoBehaviour
         {
             isJumping = false;
         }
+        
+        if (other.collider.CompareTag("Void"))
+        {
+            Destroy(gameObject);
+        }
     }
     
     private void OnTriggerEnter2D(Collider2D other)
