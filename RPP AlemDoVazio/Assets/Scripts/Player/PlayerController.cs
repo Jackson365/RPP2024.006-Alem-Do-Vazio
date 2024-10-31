@@ -232,8 +232,21 @@ public class PlayerController : MonoBehaviour
         {
             isJumping = false;
         }
+        
+        if (other.gameObject.CompareTag("FallingPlatform"))
+        {
+            jumpForce -= 3;
+        }
     }
-    
+
+    private void OnCollisionExit2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("FallingPlatform"))
+        {
+            jumpForce += 3;
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("SlowMud")) 

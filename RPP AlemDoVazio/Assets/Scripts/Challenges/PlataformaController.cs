@@ -37,6 +37,4 @@ public class FallingPlatformController : MonoBehaviour
             rig.velocity = Vector2.down * speed;
         }
     }
-    
-    
 }

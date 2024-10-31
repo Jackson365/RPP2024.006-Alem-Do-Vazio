@@ -11,6 +11,7 @@ TagManager:
   - EnemyDesespero
   - Void
   - Traps
+  - FallingPlatform
   layers:
   - Default
   - TransparentFX
