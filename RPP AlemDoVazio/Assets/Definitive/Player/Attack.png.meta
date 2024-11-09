@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2e5800365e8ccad4cbdaf5187276d009
+guid: 766ce25464714b142b8b3b94984875f8
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -81,19 +81,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -123,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BowShootOK_0
+      name: Attack_0
       rect:
         serializedVersion: 2
-        x: 35
-        y: 162
-        width: 25
-        height: 21
+        x: 223
+        y: 1024
+        width: 272
+        height: 255
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7da38d5e83af513448f0ec6981c345c2
-      internalID: -744998641
+      spriteID: 1a0b36cbee63e304a82e5819753514d4
+      internalID: 1761210974
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BowShootOK_1
+      name: Attack_1
       rect:
         serializedVersion: 2
-        x: 131
-        y: 162
-        width: 25
-        height: 21
+        x: 735
+        y: 1024
+        width: 272
+        height: 255
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ba0195c0c66f9d499250b2c4e67fb0a
-      internalID: 320219492
+      spriteID: 2c7fe632a7173924a80d97738689c966
+      internalID: -9568822
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BowShootOK_2
+      name: Attack_2
       rect:
         serializedVersion: 2
-        x: 227
-        y: 162
-        width: 25
-        height: 21
+        x: 1263
+        y: 1025
+        width: 272
+        height: 255
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,20 +166,83 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 346ef1008fce7ee4cbe3c4543356bb14
-      internalID: 554736464
+      spriteID: 1e9b784ea2b1f6a4c94e7882518a4118
+      internalID: -70554418
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BowShootOK_3
+      name: Attack_3
       rect:
         serializedVersion: 2
-        x: 35
+        x: 239
+        y: 513
+        width: 272
+        height: 255
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9db791c8b373370489127421e3aaeb67
+      internalID: -679831272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack_4
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 514
+        width: 272
+        height: 255
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcf8085870a9098489bb8b21f10f322a
+      internalID: -630578449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack_5
+      rect:
+        serializedVersion: 2
+        x: 1247
+        y: 514
+        width: 272
+        height: 255
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf757e1a9955352468c2efa6201003a7
+      internalID: -1349696279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack_6
+      rect:
+        serializedVersion: 2
+        x: 231
         y: 0
-        width: 25
-        height: 21
+        width: 272
+        height: 255
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,20 +250,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1993305d01a2454409b1a7bb7a696710
-      internalID: 1111026690
+      spriteID: a1615b8bcefe179428bc137314655786
+      internalID: 1699819925
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BowShootOK_4
+      name: Attack_7
       rect:
         serializedVersion: 2
-        x: 131
-        y: 0
-        width: 25
-        height: 21
+        x: 743
+        y: 1
+        width: 272
+        height: 255
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,8 +271,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d24f7a3296f6c6489ccbbeeb39b12af
-      internalID: -535269297
+      spriteID: 4d9d54454a391c045a9f8cf1b19870dc
+      internalID: -1177699558
       vertices: []
       indices: 
       edges: []
@@ -238,12 +288,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      BowShootOK_0: -744998641
-      BowShootOK_1: 320219492
-      BowShootOK_2: 554736464
-      BowShootOK_3: 1111026690
-      BowShootOK_4: -535269297
-      BowShootOK_5: -544966711
+      Attack_0: 1761210974
+      Attack_1: -9568822
+      Attack_2: -70554418
+      Attack_3: -679831272
+      Attack_4: -630578449
+      Attack_5: -1349696279
+      Attack_6: 1699819925
+      Attack_7: -1177699558
+      Attack_8: -104583785
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

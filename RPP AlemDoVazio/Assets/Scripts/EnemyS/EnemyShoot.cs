@@ -46,12 +46,12 @@ public class EnemyShoot : MonoBehaviour
         // Altera a rotação para definir a direção que o inimigo está olhando
         if (walkRight)
         {
-            transform.rotation = Quaternion.Euler(0, 180, 0);  // Olha para a direita
+            transform.rotation = Quaternion.Euler(0, 0, 0);  // Olha para a direita
             rig.velocity = Vector2.right * speedEnemy;
         }
         else
         {
-            transform.rotation = Quaternion.Euler(0, 0, 0); // Olha para a esquerda
+            transform.rotation = Quaternion.Euler(0, 180, 0); // Olha para a esquerda
             rig.velocity = Vector2.left * speedEnemy;
         }
     }
@@ -85,11 +85,11 @@ public class EnemyShoot : MonoBehaviour
             // Verifica a direção usando a rotação Y
             if (transform.rotation.eulerAngles.y == 180)
             {
-                shootEnemy.GetComponent<ShootEnemy>().isRight = true;  // Atira para a direita
+                shootEnemy.GetComponent<ShootEnemy>().isRight = false;  // Atira para a direita
             }
             else
             {
-                shootEnemy.GetComponent<ShootEnemy>().isRight = false; // Atira para a esquerda
+                shootEnemy.GetComponent<ShootEnemy>().isRight = true; // Atira para a esquerda
             }
 
             yield return new WaitForSeconds(0.3f);
