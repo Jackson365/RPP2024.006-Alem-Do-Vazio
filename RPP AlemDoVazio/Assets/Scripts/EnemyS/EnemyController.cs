@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,6 +18,7 @@ public class EnemyController : MonoBehaviour
     private float timer;
     private bool walkRight = true;
     public float walkTime;
+    public GameObject attackObj;
     
     public PlayerController _playerController;
 
@@ -40,12 +42,12 @@ public class EnemyController : MonoBehaviour
 
         if (walkRight)
         {
-            transform.eulerAngles = new Vector2(0, 180);
+            transform.eulerAngles = new Vector2(0, 0);
             rig.velocity = Vector2.right * speed;
         }
         else
         {
-            transform.eulerAngles = new Vector2(0, 0);
+            transform.eulerAngles = new Vector2(0, 180);
             rig.velocity = Vector2.left * speed;
         }
         
@@ -82,6 +84,19 @@ public class EnemyController : MonoBehaviour
             {
                 _playerController.isKnockRitgh = false;
             }
+        }
+
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            attackObj.SetActive(true);
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            attackObj.SetActive(false);
         }
     }
 }
