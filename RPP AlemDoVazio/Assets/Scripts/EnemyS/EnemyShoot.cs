@@ -26,11 +26,13 @@ public class EnemyShoot : MonoBehaviour
     public float tempAtual; 
     
     public Rigidbody2D rig;
+    public Animator anim;
     
     // Start is called before the first frame update
     void Start()
     {
         rig = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     void FixedUpdate()
@@ -48,11 +50,13 @@ public class EnemyShoot : MonoBehaviour
         {
             transform.rotation = Quaternion.Euler(0, 0, 0);  // Olha para a direita
             rig.velocity = Vector2.right * speedEnemy;
+            anim.SetInteger("TransitionShoot" ,0);
         }
         else
         {
             transform.rotation = Quaternion.Euler(0, 180, 0); // Olha para a esquerda
             rig.velocity = Vector2.left * speedEnemy;
+            anim.SetInteger("TransitionShoot" ,0);
         }
     }
     
@@ -75,23 +79,14 @@ public class EnemyShoot : MonoBehaviour
     IEnumerator Shoot()
     {
         tempAtual -= Time.deltaTime; 
-
+        anim.SetInteger("TransitionShoot" ,1);
+        
         if (tempAtual <= 0)
         {
             // Cria o projétil no firePoint
             GameObject shootEnemy = Instantiate(shoot, firePoint.position, Quaternion.Euler(0f, 0f, -90f));
             tempAtual = tempMax;
-
-            // Verifica a direção usando a rotação Y
-            /*if (transform.rotation.eulerAngles.y == 180)
-            {
-                shootEnemy.GetComponent<ShootEnemy>().isRight = false;  // Atira para a direita
-            }
-            else
-            {
-                shootEnemy.GetComponent<ShootEnemy>().isRight = true; // Atira para a esquerda
-            }*/
-
+            
             yield return new WaitForSeconds(0.3f);
         }
     }
