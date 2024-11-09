@@ -1435,11 +1435,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4023603212247669054, guid: c648fffe1def51e4698155608e12c392, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.4625845
+      value: -5.873621
       objectReference: {fileID: 0}
     - target: {fileID: 4023603212247669054, guid: c648fffe1def51e4698155608e12c392, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.9029999
+      value: -1.9829998
       objectReference: {fileID: 0}
     - target: {fileID: 4023603212247669054, guid: c648fffe1def51e4698155608e12c392, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1491,11 +1491,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7312998983313563005, guid: c648fffe1def51e4698155608e12c392, type: 3}
       propertyPath: m_ScreenX
-      value: 0.23
+      value: 0.47000003
       objectReference: {fileID: 0}
     - target: {fileID: 7312998983313563005, guid: c648fffe1def51e4698155608e12c392, type: 3}
       propertyPath: m_ScreenY
-      value: 0.56
+      value: 0.55
       objectReference: {fileID: 0}
     - target: {fileID: 7312998983313563005, guid: c648fffe1def51e4698155608e12c392, type: 3}
       propertyPath: m_DeadZoneWidth
@@ -3015,7 +3015,7 @@ GameObject:
   - component: {fileID: 1074797459}
   - component: {fileID: 1074797458}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Dark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74772,7 +74772,7 @@ GameObject:
   - component: {fileID: 1713921543}
   - component: {fileID: 1713921542}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Efects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

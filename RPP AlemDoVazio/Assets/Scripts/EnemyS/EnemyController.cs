@@ -88,15 +88,15 @@ public class EnemyController : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Player"))
         {
-            attackObj.SetActive(true);
+            StartCoroutine(ShowAttackImage());
         }
     }
-
-    private void OnCollisionExit2D(Collision2D other)
+    
+    private IEnumerator ShowAttackImage()
     {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            attackObj.SetActive(false);
-        }
+        // Ativa o objeto e espera por 3 segundos antes de desativá-lo
+        attackObj.SetActive(true);
+        yield return new WaitForSeconds(3f);
+        attackObj.SetActive(false);
     }
 }
