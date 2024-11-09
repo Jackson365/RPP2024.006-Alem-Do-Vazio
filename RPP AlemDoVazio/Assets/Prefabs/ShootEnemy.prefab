@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 3737355165747125334}
   - component: {fileID: 393940842378078610}
   m_Layer: 0
-  m_Name: ShootEnemyPROVISORIO
-  m_TagString: Untagged
+  m_Name: ShootEnemy
+  m_TagString: ShootEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77,12 +77,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 601513173, guid: 634f883b919898245a03efabf29ce5b7, type: 3}
+  m_Sprite: {fileID: 1951897296, guid: 6a2971dd8632170498f0f0e94d073737, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 1
   m_DrawMode: 0
-  m_Size: {x: 0.15, y: 0.07}
+  m_Size: {x: 0.39, y: 0.44}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -185,5 +185,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   damage: 1
-  player: {fileID: 0}
-  isRight: 0

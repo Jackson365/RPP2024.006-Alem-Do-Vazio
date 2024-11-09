@@ -12,6 +12,8 @@ TagManager:
   - Void
   - Traps
   - FallingPlatform
+  - ShootEnemy
+  - Obstacle
   layers:
   - Default
   - TransparentFX

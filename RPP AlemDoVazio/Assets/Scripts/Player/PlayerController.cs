@@ -36,6 +36,9 @@ public class PlayerController : MonoBehaviour
     public float kbTime;
     public bool isKnockRitgh;
     
+    [Header("EnemyShoot")]
+    private bool isParalyzed = false;
+    
     void Start()
     {
         rig2D = GetComponent<Rigidbody2D>();
@@ -47,14 +50,25 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         KnockLogig();
-        Jump();
-        Bow(); 
+        
+        if (!isParalyzed)
+        {
+            Move();
+            Jump();
+            Bow();
+        }
     }
 
     void Move()
     {
+        if (isParalyzed)
+        {
+            movement = 0;
+            rig2D.velocity = new Vector2(0, rig2D.velocity.y);
+            return;
+        }
+
         movement = Input.GetAxis("Horizontal");
-        
         rig2D.velocity = new Vector2(movement * speed, rig2D.velocity.y);
 
         if (movement > 0)
@@ -66,7 +80,7 @@ public class PlayerController : MonoBehaviour
             transform.eulerAngles = new Vector3(0, 0, 0);
         }
 
-        if (movement < 0 )
+        if (movement < 0)
         {
             if (!isJumping)
             {
@@ -80,7 +94,6 @@ public class PlayerController : MonoBehaviour
             anim.SetInteger("Transition", 0);
         }
     }
-
     void KnockLogig()
     {
         if (kbCount < 0)
@@ -238,6 +251,13 @@ public class PlayerController : MonoBehaviour
             jumpForce -= 3;
         }
     }
+    
+    private IEnumerator ParalyzePlayer(float duration)
+    {
+        isParalyzed = true;
+        yield return new WaitForSeconds(duration);
+        isParalyzed = false;
+    }
 
     private void OnCollisionExit2D(Collision2D other)
     {
@@ -253,7 +273,13 @@ public class PlayerController : MonoBehaviour
         {
             speed *= slowDownFactor;
         }
+        
+        if (other.gameObject.CompareTag("ShootEnemy"))
+        {
+            StartCoroutine(ParalyzePlayer(5f)); 
+        }
     }
+    
 
     private void OnTriggerExit2D(Collider2D other)
     {

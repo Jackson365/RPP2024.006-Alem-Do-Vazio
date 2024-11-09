@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 634f883b919898245a03efabf29ce5b7
+guid: 6a2971dd8632170498f0f0e94d073737
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 200
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ShootEnemy_0
+      name: ShootEnemy_1
       rect:
         serializedVersion: 2
-        x: 7
-        y: 39
-        width: 15
-        height: 7
+        x: 124
+        y: 743
+        width: 38
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 78b6e504969ecdd42afc7d73ddb54045
-      internalID: 601513173
+      spriteID: 24a8c84f0f4ba01439a4f27af2bfc48f
+      internalID: 1984170962
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ShootEnemy_1
+      name: ShootEnemy_0
       rect:
         serializedVersion: 2
-        x: 36
-        y: 39
-        width: 15
-        height: 7
+        x: 689
+        y: 722
+        width: 39
+        height: 44
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,8 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e490617ff33944748a3da8c2d95dc89c
-      internalID: 1523087204
+      spriteID: 5c84c5798e3f82c45919f2a8092a199d
+      internalID: 1951897296
       vertices: []
       indices: 
       edges: []
@@ -155,19 +155,40 @@ TextureImporter:
       name: ShootEnemy_2
       rect:
         serializedVersion: 2
-        x: 7
-        y: 11
-        width: 14
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 223
+        y: 196
+        width: 42
+        height: 28
+      alignment: 9
+      pivot: {x: -7.271478, y: -6.5364933}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4c33de99fa64e2148b3508ec1edcc632
-      internalID: 1568965914
+      spriteID: 551e1148d4ba49b469db9628add36c29
+      internalID: 107723752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShootEnemy_3
+      rect:
+        serializedVersion: 2
+        x: 781
+        y: 178
+        width: 42
+        height: 28
+      alignment: 9
+      pivot: {x: 0.5019401, y: 0.41070774}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb0b0fc8f20cedd418b4459ac847e2eb
+      internalID: 1693346513
       vertices: []
       indices: 
       edges: []
@@ -183,9 +204,24 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ShootEnemy_0: 601513173
-      ShootEnemy_1: 1523087204
-      ShootEnemy_2: 1568965914
+      ShootEnemy_0: 1951897296
+      ShootEnemy_1: 1984170962
+      ShootEnemy_10: -1678615125
+      ShootEnemy_11: -1936309949
+      ShootEnemy_12: -1483811636
+      ShootEnemy_13: 679204005
+      ShootEnemy_14: -2004764109
+      ShootEnemy_15: 495261001
+      ShootEnemy_16: 136768420
+      ShootEnemy_17: 1253348332
+      ShootEnemy_2: 107723752
+      ShootEnemy_3: 1693346513
+      ShootEnemy_4: 1012748207
+      ShootEnemy_5: 627410342
+      ShootEnemy_6: 188224123
+      ShootEnemy_7: -1269125922
+      ShootEnemy_8: -166424427
+      ShootEnemy_9: 1401508471
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

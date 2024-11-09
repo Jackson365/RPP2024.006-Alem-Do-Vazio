@@ -6,44 +6,37 @@ using UnityEngine;
 public class ShootEnemy : MonoBehaviour
 {
     private Rigidbody2D rig;
-    
-    public float speed;
-    public int damage;
-    
-    public bool isRight;
-    // Start is called before the first frame update
+
+    public float speed; // Velocidade do projétil
+    public int damage; // Dano causado pelo projétil
+
+    private Transform player; // Referência ao transform do jogador
+    private Vector2 direction; // Direção para o jogador
+
     void Start()
     {
         rig = GetComponent<Rigidbody2D>();
-        Destroy(gameObject, 2f);
+        
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>(); 
+        Destroy(gameObject, 5f); 
     }
-    
-    // Update is called once per frame
-    void FixedUpdate()
+
+    private void Update()
     {
-        if (isRight)
+        transform.position = Vector2.MoveTowards(transform.position, player.position, speed* Time.deltaTime);
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
         {
-            rig.velocity = Vector2.right * speed;
-            transform.rotation = Quaternion.Euler(0, 0, 0);
-        }
-        else
-        {
-            rig.velocity = Vector2.left * speed;
-            transform.rotation = Quaternion.Euler(0, 180, 0);
+            HealthObserver.TakeDamage(damage);
+            Destroy(gameObject); // Destrói o projétil após causar dano
         }
         
-    }
-    
-    public void OnTriggerEnter2D(Collider2D collison)
-    {
-        if (collison != null)
+        if (collision.gameObject.CompareTag("Obstacle"))
         {
-            if (collison.gameObject.tag == "Player")
-            {
-                HealthObserver.TakeDamage(damage);
-                Destroy(gameObject);
-            }
+            Destroy(gameObject);
         }
     }
 }
-

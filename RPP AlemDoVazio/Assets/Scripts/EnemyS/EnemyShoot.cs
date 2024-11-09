@@ -83,14 +83,14 @@ public class EnemyShoot : MonoBehaviour
             tempAtual = tempMax;
 
             // Verifica a direção usando a rotação Y
-            if (transform.rotation.eulerAngles.y == 180)
+            /*if (transform.rotation.eulerAngles.y == 180)
             {
                 shootEnemy.GetComponent<ShootEnemy>().isRight = false;  // Atira para a direita
             }
             else
             {
                 shootEnemy.GetComponent<ShootEnemy>().isRight = true; // Atira para a esquerda
-            }
+            }*/
 
             yield return new WaitForSeconds(0.3f);
         }
