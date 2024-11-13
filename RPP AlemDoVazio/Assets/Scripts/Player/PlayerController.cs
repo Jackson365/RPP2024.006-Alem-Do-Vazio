@@ -27,8 +27,10 @@ public class PlayerController : MonoBehaviour
     public GameObject bowDesespero;
     
     [Header("SlowMud")] 
-    public float slowDownFactor = 1f;
+    public float slowDownFactor = 3.5f;
     private float originalSpeed;
+
+    [Header("Bush")] public float BushSpeed = 2;
     
     [Header("KnockBack")] 
     public float kbForce;
@@ -271,7 +273,12 @@ public class PlayerController : MonoBehaviour
     {
         if (other.CompareTag("SlowMud")) 
         {
-            speed *= slowDownFactor;
+            speed -= slowDownFactor;
+        }
+
+        if (other.gameObject.CompareTag("Bush"))
+        {
+            speed -= BushSpeed;
         }
         
         if (other.gameObject.CompareTag("ShootEnemy"))
@@ -286,6 +293,11 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("SlowMud")) 
         {
             speed = originalSpeed; 
+        }
+
+        if (other.gameObject.CompareTag("Bush"))
+        {
+            speed = originalSpeed;
         }
     }
 }
