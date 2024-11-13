@@ -2,112 +2,79 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
-using Random = UnityEngine.Random;
 
 public class EnemyPatroll : MonoBehaviour
 {
     [Header("Atributtes")]
+    public float speed;
     public int health;
     public int damage = 1;
     
     [Header("Components")]
-    public Transform playerPos;
-    public Transform[] _position;
-    public Rigidbody2D rig;
+    private Rigidbody2D rig;
+    private Animator anim;
     
     [Header("Others")]
-    public float speedEnemy;
-    public float waitingTime;
-    public float attackRange = 1f; // Distância máxima para atacar
-    
-    private int random;
-    private float time;
-    private bool isAttacking = false; // Variável para controlar se o inimigo está atacando
-    
-    // Novo: cooldown do ataque
-    public float attackCooldown = 0.5f;  // Tempo entre os ataques
-    private float nextAttackTime = 0f; // Próximo tempo permitido para atacar
+    private float timer;
+    private bool walkRight = true;
+    public float walkTime;
+    public GameObject attackObj;
     
     public PlayerController _playerController;
-    
+
+    // Start is called before the first frame update
     void Start()
     {
-        random = Random.Range(0, _position.Length);
-        time = waitingTime;
         rig = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
-    void Update()
+    // Update is called once per frame
+    void FixedUpdate()
     {
-        if (!isAttacking)
+        timer += Time.deltaTime;
+
+        if (timer >= walkTime)
         {
-            PatrollRandom();
+            walkRight = !walkRight;
+            timer = 0f;
+        }
+
+        if (walkRight)
+        {
+            transform.eulerAngles = new Vector2(0, 0);
+            rig.velocity = Vector2.right * speed;
         }
         else
         {
-            FollowPLayer();
+            transform.eulerAngles = new Vector2(0, 180);
+            rig.velocity = Vector2.left * speed;
         }
+        
     }
 
-    public void PatrollRandom()
-    {
-        transform.position = Vector2.MoveTowards(transform.position,_position[random].position, speedEnemy * Time.deltaTime);
-        float _dist = Vector2.Distance(transform.position, _position[random].position);
-
-        if (_dist <= 0.2f)
-        {
-            if (time <= 0)
-            {
-                random = Random.Range(0, _position.Length);
-                time = waitingTime; 
-            }
-            else
-            {
-                time -= Time.deltaTime;
-            }
-        }
-    }
-    
-    private void FollowPLayer()
-    {
-        float distance = Vector2.Distance(transform.position, playerPos.position);
-
-        if (distance <= attackRange)
-        {
-            // Verifica se já passou o tempo suficiente para um novo ataque
-            if (Time.time >= nextAttackTime)
-            {
-                HealthObserver.TakeDamage(damage);
-                nextAttackTime = Time.time + attackCooldown; // Define o próximo tempo de ataque
-            }
-        }
-        else if (distance > attackRange && distance < 4)
-        {
-            transform.position = Vector2.MoveTowards(transform.position, playerPos.position, speedEnemy * Time.deltaTime);
-        }
-        else
-        {
-            isAttacking = false;
-        }
-    }
-    
-    public void Damage (int vida)
+    public void Damage(int vida)
     {
         health -= vida;
+        anim.SetTrigger("hit");
 
+        if (health == 4)
+        {
+            speed += 3;
+            walkTime += 3;
+        }
+        
         if(health <= 0)
         {
             Destroy(gameObject);
         }
     }
-    
     public void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            isAttacking = true;
-
+            HealthObserver.TakeDamage(damage);
+            
             _playerController.kbCount = _playerController.kbTime;
             if (collision.transform.position.x <= transform.position.x)
             {
@@ -118,5 +85,18 @@ public class EnemyPatroll : MonoBehaviour
                 _playerController.isKnockRitgh = false;
             }
         }
+
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            StartCoroutine(ShowAttackImage());
+        }
+    }
+    
+    private IEnumerator ShowAttackImage()
+    {
+        // Ativa o objeto e espera por 3 segundos antes de desativá-lo
+        attackObj.SetActive(true);
+        yield return new WaitForSeconds(3f);
+        attackObj.SetActive(false);
     }
 }

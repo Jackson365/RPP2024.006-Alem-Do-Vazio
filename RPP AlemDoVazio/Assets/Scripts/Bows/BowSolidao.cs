@@ -39,7 +39,7 @@ public class BowSolidao : MonoBehaviour
         {
             if (collison.gameObject.tag == "Enemy")
             {
-                collison.GetComponent<EnemyController>().Damage(damage);
+                collison.GetComponent<EnemyPatroll>().Damage(damage);
                 Destroy(gameObject);
             }
         }

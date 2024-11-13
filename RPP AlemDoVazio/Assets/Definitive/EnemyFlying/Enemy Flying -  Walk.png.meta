@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5fa711fc345fe8b489c69fec48154a7d
+guid: 457a83f4e07fc5c4fb6477ecdbe50900
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Hit_0
+      name: Enemy Flying -  Walk_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 29
-        width: 22
-        height: 24
+        x: 175
+        y: 511
+        width: 52
+        height: 86
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 65495209511de6b46a05dae0c2ac4689
-      internalID: 16236409
+      spriteID: 8082e2167b4e48344860c93e208c8fe5
+      internalID: 26968553
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hit_1
+      name: Enemy Flying -  Walk_1
       rect:
         serializedVersion: 2
-        x: 26
-        y: 27
-        width: 22
-        height: 27
+        x: 175
+        y: 302
+        width: 52
+        height: 83
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5e07cb15151f61e40853b7659174cabf
-      internalID: -679513239
+      spriteID: 1d3749267e8df764f808a77e13a48cc7
+      internalID: 1888619176
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hit_2
+      name: Enemy Flying -  Walk_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 2
-        width: 24
-        height: 23
+        x: 176
+        y: 92
+        width: 55
+        height: 85
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,8 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3e03c44b85cc4ee45bf95ef7185007ca
-      internalID: -833535697
+      spriteID: a72bc86972ea9204da0a18fcd617ce85
+      internalID: -1914806431
       vertices: []
       indices: 
       edges: []
@@ -183,9 +183,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Hit_0: 16236409
-      Hit_1: -679513239
-      Hit_2: -833535697
+      Enemy Flying -  Walk_0: 26968553
+      Enemy Flying -  Walk_1: 1888619176
+      Enemy Flying -  Walk_2: -1914806431
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

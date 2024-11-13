@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8fafe3ff48182a14ba4dee3cb3711b29
+guid: b6c567af90ef11348880077dc88d2a39
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,85 +110,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Idle - Walk_0
+      name: Enemy Flying -  Attack_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 24
-        width: 25
-        height: 24
+        x: 495
+        y: 508
+        width: 56
+        height: 85
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e064936c1a4fc264db17ab6a86c4e631
-      internalID: -784770698
+      spriteID: e1f5de9432598684299e515fed689afa
+      internalID: -329182583
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle - Walk_1
+      name: Enemy Flying -  Attack_4
       rect:
         serializedVersion: 2
-        x: 25
-        y: 25
-        width: 24
-        height: 23
+        x: 175
+        y: 301
+        width: 56
+        height: 84
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 81e35794fd8634446a1adab7de71955f
-      internalID: -1929996140
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Idle - Walk_2
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 2
-        width: 23
-        height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2e320c883cf41c54f93775d5a424bab8
-      internalID: 1025988216
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Idle - Walk_3
-      rect:
-        serializedVersion: 2
-        x: 25
-        y: 2
-        width: 24
-        height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f61d5552757ed3f468bbd3752dd9c84f
-      internalID: 714161192
+      spriteID: b771730e20e0c6f4d86d7fdecdb0edde
+      internalID: 1318758488
       vertices: []
       indices: 
       edges: []
@@ -204,10 +162,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Idle - Walk_0: -784770698
-      Idle - Walk_1: -1929996140
-      Idle - Walk_2: 1025988216
-      Idle - Walk_3: 714161192
+      Enemy Flying -  Attack_0: -144599603
+      Enemy Flying -  Attack_1: 815065782
+      Enemy Flying -  Attack_2: -346534227
+      Enemy Flying -  Attack_3: -329182583
+      Enemy Flying -  Attack_4: 1318758488
+      Enemy Flying -  Attack_5: 1421701833
+      Enemy Flying -  Attack_6: 1962652201
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
