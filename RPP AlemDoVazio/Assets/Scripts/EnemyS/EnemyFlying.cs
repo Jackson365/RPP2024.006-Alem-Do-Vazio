@@ -14,12 +14,13 @@ public class EnemyFlying : MonoBehaviour
     [Header("Components")]
     public Transform playerPos;
     public Transform[] _position;
-    public Rigidbody2D rig;
+    public Rigidbody2D rigFly;
     
     [Header("Others")]
     public float speedEnemy;
     public float waitingTime;
     public float attackRange = 1f; // Distância máxima para atacar
+    public float distance;
     
     private int random;
     private float time;
@@ -30,45 +31,12 @@ public class EnemyFlying : MonoBehaviour
     private float nextAttackTime = 0f; // Próximo tempo permitido para atacar
     
     public PlayerController _playerController;
-    
-    void Start()
+
+    private void Update()
     {
-        random = Random.Range(0, _position.Length);
-        time = waitingTime;
-        rig = GetComponent<Rigidbody2D>();
+        FollowPLayer();
     }
 
-    void Update()
-    {
-        if (!isAttacking)
-        {
-            PatrollRandom();
-        }
-        else
-        {
-            FollowPLayer();
-        }
-    }
-
-    public void PatrollRandom()
-    {
-        transform.position = Vector2.MoveTowards(transform.position,_position[random].position, speedEnemy * Time.deltaTime);
-        float _dist = Vector2.Distance(transform.position, _position[random].position);
-
-        if (_dist <= 0.2f)
-        {
-            if (time <= 0)
-            {
-                random = Random.Range(0, _position.Length);
-                time = waitingTime; 
-            }
-            else
-            {
-                time -= Time.deltaTime;
-            }
-        }
-    }
-    
     private void FollowPLayer()
     {
         float distance = Vector2.Distance(transform.position, playerPos.position);
@@ -120,3 +88,4 @@ public class EnemyFlying : MonoBehaviour
         }
     }
 }
+
