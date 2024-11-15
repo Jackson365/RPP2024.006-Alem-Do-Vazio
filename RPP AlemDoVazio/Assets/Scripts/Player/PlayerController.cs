@@ -308,8 +308,10 @@ public class PlayerController : MonoBehaviour
         
         if (other.CompareTag("EnemyFlying"))
         {
-            StartCoroutine(ReduceSpeedTemporarily(3f, 2)); // Reduz a velocidade para 2 por 2 segundos
+            StartCoroutine(ReduceSpeedTemporarily(3f, 2));
             StartCoroutine(ReduceJumpTemporarily(3f, 3));
+            
+            //Adicionar o audio de efeito do inimigo
         }
     }
     

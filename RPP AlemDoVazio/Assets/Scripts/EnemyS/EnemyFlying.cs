@@ -15,6 +15,7 @@ public class EnemyFlying : MonoBehaviour
     public Transform playerPos;
     public Rigidbody2D rigFly;
     public SpriteRenderer spriteRenderer;
+    private Animator anim;
     
     [Header("Others")]
     public float speedEnemy;
@@ -38,6 +39,8 @@ public class EnemyFlying : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         initialPosition = transform.position;
+
+        anim = GetComponent<Animator>();
     }
 
     private void Update()
@@ -67,11 +70,13 @@ public class EnemyFlying : MonoBehaviour
         }
         else if (distance > attackRange && distance < 4)
         {
+            anim.SetInteger("Collision", 1);
             transform.position = Vector2.MoveTowards(transform.position, playerPos.position, speedEnemy * Time.deltaTime);
         }
         else if (distance >= 4)
         {
             // Volta para a posição inicial
+            anim.SetInteger("Collision", 0);
             transform.position = Vector2.MoveTowards(transform.position, initialPosition, speedEnemy * Time.deltaTime);
         }
     }

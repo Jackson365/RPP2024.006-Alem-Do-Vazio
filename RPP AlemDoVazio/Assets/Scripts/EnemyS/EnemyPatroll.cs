@@ -56,7 +56,7 @@ public class EnemyPatroll : MonoBehaviour
     public void Damage(int vida)
     {
         health -= vida;
-        anim.SetTrigger("hit");
+        //anim.SetTrigger("hit");
 
         if (health == 4)
         {
@@ -94,7 +94,6 @@ public class EnemyPatroll : MonoBehaviour
     
     private IEnumerator ShowAttackImage()
     {
-        // Ativa o objeto e espera por 3 segundos antes de desativá-lo
         attackObj.SetActive(true);
         yield return new WaitForSeconds(3f);
         attackObj.SetActive(false);

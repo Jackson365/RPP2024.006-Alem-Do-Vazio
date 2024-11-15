@@ -28,6 +28,9 @@ public class EnemyShoot : MonoBehaviour
     public Rigidbody2D rig;
     public Animator anim;
     
+    // Camada para os obstáculos que bloqueiam a visão
+    public LayerMask obstacleLayer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,19 +47,18 @@ public class EnemyShoot : MonoBehaviour
             walkRight = !walkRight;
             timer = 0f;
         }
-
-        // Altera a rotação para definir a direção que o inimigo está olhando
+        
         if (walkRight)
         {
-            transform.rotation = Quaternion.Euler(0, 0, 0);  // Olha para a direita
+            transform.rotation = Quaternion.Euler(0, 0, 0); 
             rig.velocity = Vector2.right * speedEnemy;
-            anim.SetInteger("TransitionShoot" ,0);
+            anim.SetInteger("TransitionShoot", 0);
         }
         else
         {
-            transform.rotation = Quaternion.Euler(0, 180, 0); // Olha para a esquerda
+            transform.rotation = Quaternion.Euler(0, 180, 0);
             rig.velocity = Vector2.left * speedEnemy;
-            anim.SetInteger("TransitionShoot" ,0);
+            anim.SetInteger("TransitionShoot", 0);
         }
     }
     
@@ -64,11 +66,21 @@ public class EnemyShoot : MonoBehaviour
     void Update()
     {
         distance = Vector2.Distance(transform.position, playerPos.position);
-
-        if (distance < 5)
+        
+        if (distance < 5 && PlayerInSight())
         {
             FireShoot();
         }
+    }
+
+    private bool PlayerInSight()
+    {
+        Vector2 directionToPlayer = (playerPos.position - transform.position).normalized;
+        float distanceToPlayer = Vector2.Distance(transform.position, playerPos.position);
+        
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, directionToPlayer, distanceToPlayer, obstacleLayer);
+        
+        return hit.collider == null;
     }
 
     private void FireShoot()
@@ -79,11 +91,10 @@ public class EnemyShoot : MonoBehaviour
     IEnumerator Shoot()
     {
         tempAtual -= Time.deltaTime; 
-        anim.SetInteger("TransitionShoot" ,1);
+        anim.SetInteger("TransitionShoot", 1);
         
         if (tempAtual <= 0)
         {
-            // Cria o projétil no firePoint
             GameObject shootEnemy = Instantiate(shoot, firePoint.position, Quaternion.Euler(0f, 0f, -90f));
             tempAtual = tempMax;
             
@@ -91,7 +102,7 @@ public class EnemyShoot : MonoBehaviour
         }
     }
     
-    public void Damage (int vida)
+    public void Damage(int vida)
     {
         health -= vida;
 
@@ -112,7 +123,7 @@ public class EnemyShoot : MonoBehaviour
             {
                 _playerController.isKnockRitgh = true;
             }
-            if (collision.transform.position.x > transform.position.x)
+            else
             {
                 _playerController.isKnockRitgh = false;
             }
