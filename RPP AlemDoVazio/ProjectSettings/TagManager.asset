@@ -4,17 +4,17 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Enemy
-  - EnemyPatroll
   - Plataform
   - SlowMud
-  - EnemyDesespero
   - Void
   - Traps
   - FallingPlatform
   - ShootEnemy
   - Obstacle
   - Bush
+  - EnemyFlying
+  - EnemyPatroll
+  - EnemyDesespero
   layers:
   - Default
   - TransparentFX

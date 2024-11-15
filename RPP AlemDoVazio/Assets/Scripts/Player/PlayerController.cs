@@ -30,7 +30,12 @@ public class PlayerController : MonoBehaviour
     public float slowDownFactor = 3.5f;
     private float originalSpeed;
 
-    [Header("Bush")] public float BushSpeed = 2;
+    [Header("Bush")] public float BushSpeed = 2f;
+
+    [Header("EnemyFlying")] 
+    public float attackFlyingSpeed = 2.5f;
+    public bool isFlying;
+    private float originalJumpForce;
     
     [Header("KnockBack")] 
     public float kbForce;
@@ -47,6 +52,7 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
                 
         originalSpeed = speed;
+        originalJumpForce = jumpForce;
     }
     
     void Update()
@@ -260,7 +266,21 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(duration);
         isParalyzed = false;
     }
-
+    
+    private IEnumerator ReduceSpeedTemporarily(float duration, float reducedSpeed)
+    {
+        speed = reducedSpeed;
+        yield return new WaitForSeconds(duration);
+        speed = originalSpeed; 
+    }
+    
+    private IEnumerator ReduceJumpTemporarily(float duration, float reducedJump)
+    {
+        jumpForce = reducedJump;
+        yield return new WaitForSeconds(duration);
+        jumpForce = originalJumpForce; 
+    }
+    
     private void OnCollisionExit2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("FallingPlatform"))
@@ -284,6 +304,12 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("ShootEnemy"))
         {
             StartCoroutine(ParalyzePlayer(5f)); 
+        }
+        
+        if (other.CompareTag("EnemyFlying"))
+        {
+            StartCoroutine(ReduceSpeedTemporarily(3f, 2)); // Reduz a velocidade para 2 por 2 segundos
+            StartCoroutine(ReduceJumpTemporarily(3f, 3));
         }
     }
     

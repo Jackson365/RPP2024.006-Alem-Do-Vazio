@@ -1435,11 +1435,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4023603212247669054, guid: c648fffe1def51e4698155608e12c392, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.87328
+      value: 64.57672
       objectReference: {fileID: 0}
     - target: {fileID: 4023603212247669054, guid: c648fffe1def51e4698155608e12c392, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.9829998
+      value: -0.2999999
       objectReference: {fileID: 0}
     - target: {fileID: 4023603212247669054, guid: c648fffe1def51e4698155608e12c392, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1526,7 +1526,7 @@ GameObject:
   - component: {fileID: 668306850}
   m_Layer: 0
   m_Name: 'EnemyFlying '
-  m_TagString: Untagged
+  m_TagString: EnemyFlying
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1543,16 +1543,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8350d9426d7639a4abd4c17f296b4626, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
+  health: 3
   damage: 1
   playerPos: {fileID: 1463621742}
-  _position: []
-  rig: {fileID: 668306851}
-  speedEnemy: 0
-  waitingTime: 0
+  rigFly: {fileID: 668306851}
+  spriteRenderer: {fileID: 668306854}
+  speedEnemy: 3.5
+  waitingTime: 0.5
   attackRange: 1
+  distance: 4
   attackCooldown: 0.5
-  _playerController: {fileID: 0}
+  _playerController: {fileID: 1463621743}
 --- !u!50 &668306851
 Rigidbody2D:
   serializedVersion: 4
@@ -1568,7 +1569,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -1579,7 +1580,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!58 &668306852
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1609,7 +1610,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.0116958115, y: 0}
@@ -1697,8 +1698,8 @@ Transform:
   m_GameObject: {fileID: 668306849}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.527443, y: -0.21849763, z: 0}
-  m_LocalScale: {x: 1.1131, y: 1.1131, z: 1.1131}
+  m_LocalPosition: {x: 68.95, y: -0.84, z: 0}
+  m_LocalScale: {x: 1.6010832, y: 1.6010832, z: 1.6010832}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1801,7 +1802,7 @@ GameObject:
   - component: {fileID: 687832697}
   m_Layer: 0
   m_Name: EnemyShoot
-  m_TagString: EnemyDesespero
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3235,7 +3236,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.3660378, g: 0.29490215, b: 0.29490215, a: 0.99607843}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3449,7 +3450,7 @@ GameObject:
   - component: {fileID: 1164414676}
   m_Layer: 0
   m_Name: EnemyPatroll
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4240,8 +4241,8 @@ Transform:
   m_GameObject: {fileID: 1463621739}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.3, y: -2.383, z: 0}
-  m_LocalScale: {x: 0.4917296, y: 0.4917296, z: 0.4917296}
+  m_LocalPosition: {x: 64.15, y: -0.7, z: 0}
+  m_LocalScale: {x: 0.5473442, y: 0.5473442, z: 0.5473442}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1063627585}
@@ -4267,6 +4268,8 @@ MonoBehaviour:
   bowDesespero: {fileID: 5049081297024909926, guid: 3edc3f078f3212f468142b5c4dca0056, type: 3}
   slowDownFactor: 3.5
   BushSpeed: 2
+  attackFlyingSpeed: 0
+  isFlying: 0
   kbForce: 6
   kbCount: 0
   kbTime: 0.2

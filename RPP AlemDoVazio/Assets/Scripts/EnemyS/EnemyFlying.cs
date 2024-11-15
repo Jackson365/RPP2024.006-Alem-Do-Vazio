@@ -13,18 +13,19 @@ public class EnemyFlying : MonoBehaviour
     
     [Header("Components")]
     public Transform playerPos;
-    public Transform[] _position;
     public Rigidbody2D rigFly;
+    public SpriteRenderer spriteRenderer;
     
     [Header("Others")]
     public float speedEnemy;
     public float waitingTime;
     public float attackRange = 1f; // Distância máxima para atacar
     public float distance;
+    private Vector3 initialPosition;
     
     private int random;
     private float time;
-    private bool isAttacking = false; // Variável para controlar se o inimigo está atacando
+    //private bool isAttacking = false; // Variável para controlar se o inimigo está atacando
     
     // Novo: cooldown do ataque
     public float attackCooldown = 0.5f;  // Tempo entre os ataques
@@ -32,31 +33,46 @@ public class EnemyFlying : MonoBehaviour
     
     public PlayerController _playerController;
 
-    private void Update()
+
+    private void Start()
     {
-        FollowPLayer();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        initialPosition = transform.position;
     }
 
-    private void FollowPLayer()
+    private void Update()
+    {
+        FollowPlayer();
+    }
+
+    private void FollowPlayer()
     {
         float distance = Vector2.Distance(transform.position, playerPos.position);
+
+        // Vira o inimigo na direção do jogador usando flipX
+        spriteRenderer.flipX = playerPos.position.x < transform.position.x;
 
         if (distance <= attackRange)
         {
             // Verifica se já passou o tempo suficiente para um novo ataque
             if (Time.time >= nextAttackTime)
             {
+                // Causa dano ao jogador
                 HealthObserver.TakeDamage(damage);
                 nextAttackTime = Time.time + attackCooldown; // Define o próximo tempo de ataque
+
+                // Aciona o knockback ao causar dano
+                TriggerKnockback();
             }
         }
         else if (distance > attackRange && distance < 4)
         {
             transform.position = Vector2.MoveTowards(transform.position, playerPos.position, speedEnemy * Time.deltaTime);
         }
-        else
+        else if (distance >= 4)
         {
-            isAttacking = false;
+            // Volta para a posição inicial
+            transform.position = Vector2.MoveTowards(transform.position, initialPosition, speedEnemy * Time.deltaTime);
         }
     }
     
@@ -70,22 +86,10 @@ public class EnemyFlying : MonoBehaviour
         }
     }
     
-    public void OnCollisionEnter2D(Collision2D collision)
+    private void TriggerKnockback()
     {
-        if (collision.gameObject.tag == "Player")
-        {
-            isAttacking = true;
-
-            _playerController.kbCount = _playerController.kbTime;
-            if (collision.transform.position.x <= transform.position.x)
-            {
-                _playerController.isKnockRitgh = true;
-            }
-            if (collision.transform.position.x > transform.position.x)
-            {
-                _playerController.isKnockRitgh = false;
-            }
-        }
+        _playerController.kbCount = _playerController.kbTime;
+        _playerController.isKnockRitgh = playerPos.position.x <= transform.position.x;
     }
 }
 
