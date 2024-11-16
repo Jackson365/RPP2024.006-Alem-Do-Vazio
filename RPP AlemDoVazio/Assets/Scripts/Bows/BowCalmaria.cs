@@ -13,7 +13,7 @@ public class BowCalmaria : BowController
     {
         if (collison != null)
         {
-            if (collison.gameObject.tag == "EnemyDesespero")
+            if (collison.gameObject.tag == "EnemyShoot")
             {
                 collison.GetComponent<EnemyShoot>().Damage(damage);
                 Destroy(gameObject);

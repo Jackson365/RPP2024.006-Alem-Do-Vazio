@@ -17,9 +17,9 @@ public class BowSolidao : BowController
     {
         if (collison != null)
         {
-            if (collison.gameObject.tag == "EnemyDesespero")
+            if (collison.gameObject.CompareTag("EnemyPatroll"))
             {
-                collison.GetComponent<EnemyShoot>().Damage(damage);
+                collison.GetComponent<EnemyPatroll>().Damage(damage);
                 Destroy(gameObject);
             }
         }
