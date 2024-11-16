@@ -16,6 +16,7 @@ public class GameController : MonoBehaviour
 
     public GameObject pauseObj;
     public GameObject GameOverObj;
+    public GameObject configObj;
 
     private bool isPaused;
 
@@ -80,5 +81,10 @@ public class GameController : MonoBehaviour
         HealthObserver.ResetHealth();
         SceneManager.LoadScene(1);
         GameOverObj.SetActive(false);
+    }
+
+    public void ConfigGame()
+    {
+        configObj.SetActive(true);
     }
 }
