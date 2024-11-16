@@ -4,42 +4,22 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class BowSolidao : MonoBehaviour
+public class BowSolidao : BowController
 {
-    private Rigidbody2D rig;
-    public float speed;
-
-    public int damage;
-
-    public bool isRight;
-    // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
-        rig = GetComponent<Rigidbody2D>();
-        Destroy(gameObject, 2f);
+        base.Start();
+        speed = 10f;   // Customiza a velocidade da flecha
+        damage = 1;   // Customiza o dano da flecha
     }
-
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        if (isRight)
-        {
-            rig.velocity = Vector2.right * speed;
-        }
-        else
-        {
-            rig.velocity = Vector2.left * speed;
-        }
-        
-    }
-
+    
     public void OnTriggerEnter2D(Collider2D collison)
     {
         if (collison != null)
         {
-            if (collison.gameObject.tag == "Enemy")
+            if (collison.gameObject.tag == "EnemyDesespero")
             {
-                collison.GetComponent<EnemyPatroll>().Damage(damage);
+                collison.GetComponent<EnemyShoot>().Damage(damage);
                 Destroy(gameObject);
             }
         }

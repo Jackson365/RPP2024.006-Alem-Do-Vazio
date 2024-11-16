@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -20,11 +21,6 @@ public class PlayerController : MonoBehaviour
     private bool isJumping;
     private bool doubleJump;
     private bool isFire;
-    
-    [Header("Bows")]
-    public GameObject bowCoragem;
-    public GameObject bowCalmaria;
-    public GameObject bowDesespero;
     
     [Header("SlowMud")] 
     public float slowDownFactor = 3.5f;
@@ -46,6 +42,10 @@ public class PlayerController : MonoBehaviour
     [Header("EnemyShoot")]
     private bool isParalyzed = false;
     
+    [Header("Bows")]
+    public GameObject[] bows; // Array com prefabs de cada tipo de flecha (Calmaria, Coragem, Desespero)
+    private int selectedBowIndex = 0; // Índice da flecha selecionada
+    
     void Start()
     {
         rig2D = GetComponent<Rigidbody2D>();
@@ -53,11 +53,14 @@ public class PlayerController : MonoBehaviour
                 
         originalSpeed = speed;
         originalJumpForce = jumpForce;
+
+        selectedBowIndex = 0; 
     }
     
     void Update()
     {
         KnockLogig();
+        ChangeBow();
         
         if (!isParalyzed)
         {
@@ -150,94 +153,56 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-
-    void Bow()
+    
+    void ChangeBow()
     {
-        StartCoroutine("Fire");
-        StartCoroutine("FireCALM");
-        StartCoroutine("FireDesespero");
-    }
-
-    IEnumerator Fire()
-    {
-        if (Input.GetKeyDown(KeyCode.Z))
-        { 
-            if(movement == 0)
-            {
-                isFire = true; 
-            
-                anim.SetInteger("Transition", 3);
-                GameObject BowCoragem = Instantiate(bowCoragem, firePoint.position, firePoint.rotation);
-
-                if (transform.rotation.y == 0)
-                {
-                    BowCoragem.GetComponent<BowSolidao>().isRight = true;
-                }
-                if (transform.rotation.y == 180)
-                {
-                    BowCoragem.GetComponent<BowSolidao>().isRight = false;
-                }
-
-                yield return new WaitForSeconds(0.2f);
-                isFire = false;
-                anim.SetInteger("Transition", 0);
-            }
+        // Verifica se o jogador pressionou as teclas de seta para cima ou para baixo
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            selectedBowIndex = (selectedBowIndex + 1) % bows.Length; // Avança para o próximo arco
+            GameController.instance.UpdateBowIcon(selectedBowIndex); // Atualiza o ícone da flecha selecionada no GameController
         }
-    }
-
-    IEnumerator FireCALM()
-    {
-        if (Input.GetKeyDown(KeyCode.X))
-        { 
-            if(movement == 0)
-            {
-                isFire = true; 
-            
-                anim.SetInteger("Transition", 3);
-                GameObject BowCalmaria = Instantiate(bowCalmaria, firePoint.position, firePoint.rotation);
-
-                if (transform.rotation.y == 0)
-                {
-                    BowCalmaria.GetComponent<BowCalmaria>().isRight = true;
-                }
-                if (transform.rotation.y == 180)
-                {
-                    BowCalmaria.GetComponent<BowCalmaria>().isRight = false;
-                }
-
-                yield return new WaitForSeconds(0.2f);
-                isFire = false;
-                anim.SetInteger("Transition", 0);
-            }
+        else if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            selectedBowIndex = (selectedBowIndex - 1 + bows.Length) % bows.Length; // Retrocede para o arco anterior
+            GameController.instance.UpdateBowIcon(selectedBowIndex); // Atualiza o ícone da flecha selecionada no GameController
         }
     }
     
-    IEnumerator FireDesespero()
+    void Bow()
     {
-        if (Input.GetKeyDown(KeyCode.C))
-        { 
-            if(movement == 0)
-            {
-                isFire = true; 
-            
-                anim.SetInteger("Transition", 3);
-                GameObject BowDesespero = Instantiate(bowDesespero, firePoint.position, firePoint.rotation);
-
-                if (transform.rotation.y == 0)
-                {
-                    BowDesespero.GetComponent<BowDesespero>().isRight = true;
-                }
-                if (transform.rotation.y == 180)
-                {
-                    BowDesespero.GetComponent<BowDesespero>().isRight = false;
-                }
-
-                yield return new WaitForSeconds(0.2f);
-                isFire = false;
-                anim.SetInteger("Transition", 0);
-            }
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            FireSelectedBow();
         }
     }
+
+    void FireSelectedBow()
+    {
+        isFire = true;
+        anim.SetInteger("Transition", 3);
+
+        GameObject selectedBow = Instantiate(bows[selectedBowIndex], firePoint.position, firePoint.rotation);
+
+        if (transform.rotation.y == 0)
+        {
+            selectedBow.GetComponent<BowController>().isRight = true;
+        }
+        else if (transform.rotation.y == 180)
+        {
+            selectedBow.GetComponent<BowController>().isRight = false;
+        }
+
+        StartCoroutine(ResetFireAnimation());
+    }
+
+    IEnumerator ResetFireAnimation()
+    {
+        yield return new WaitForSeconds(0.2f);
+        isFire = false;
+        anim.SetInteger("Transition", 0);
+    }
+
     
     //VÃO ESTÁ EM GAMECONTROLLER
         

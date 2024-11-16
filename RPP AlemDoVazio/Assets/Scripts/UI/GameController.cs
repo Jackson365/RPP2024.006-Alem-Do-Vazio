@@ -21,7 +21,11 @@ public class GameController : MonoBehaviour
     public Button playPauseButton; // Botão para controlar o Play/Pause
     public Sprite playIcon; // Ícone de Play
     public Sprite pauseIcon; // Ícone de Pause
-
+    
+    [Header("Bows")]
+    public Image[] bowIcons; // UI icons para mostrar a flecha selecionada
+    private int selectedBowIndex = 0;
+    
     private bool isPaused;
 
     void Awake()
@@ -42,6 +46,32 @@ public class GameController : MonoBehaviour
         totalAmulet = PlayerPrefs.GetInt("scoreAmulet");
         UpdatePlayPauseButtonIcon(); // Inicializa o botão com o ícone correto
         playPauseButton.onClick.AddListener(TogglePlayPause); // Configura o evento do botão
+        
+        // Garantir que o ícone da flecha seja atualizado no início
+        selectedBowIndex = 0; // A primeira flecha é a padrão
+        UpdateBowIcon(selectedBowIndex); // Atualiza a UI para refletir a primeira flecha
+    }
+    
+    public void UpdateBowIcon(int selectedIndex)
+    {
+        selectedBowIndex = selectedIndex;
+
+        // Define as cores para o ícone ativo e os ícones inativos
+        Color selectedColor = Color.white; // Cor para o ícone selecionado
+        Color unselectedColor = new Color(1, 1, 1, 0f); // Cor para ícones não selecionados (totalmente transparente)
+
+        // Atualiza a visibilidade e a cor dos ícones
+        for (int i = 0; i < bowIcons.Length; i++)
+        {
+            if (bowIcons[i] != null)
+            {
+                // Se o índice atual for igual ao índice selecionado, muda a cor para o selecionado
+                bowIcons[i].color = (i == selectedBowIndex) ? selectedColor : unselectedColor;
+
+                // Torna o ícone visível ou invisível com base na seleção
+                bowIcons[i].gameObject.SetActive(i == selectedBowIndex);
+            }
+        }
     }
 
     public void UpdateAmulet(int value)
