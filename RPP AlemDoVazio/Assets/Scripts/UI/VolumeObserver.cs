@@ -14,8 +14,8 @@ public static class VolumeObserver
         get => currentVolume;
         set
         {
-            currentVolume = Mathf.Clamp(value, 0.0f, 1.0f); 
-            NotifyVolumeChange();
+        currentVolume = Mathf.Clamp(value, 0.0f, 1.0f); 
+        NotifyVolumeChange();
         }
     }
 

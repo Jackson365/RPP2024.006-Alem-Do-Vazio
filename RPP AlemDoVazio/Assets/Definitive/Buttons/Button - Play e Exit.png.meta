@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 902fed10a7f103445af1cd23471d478d
+guid: bd4978f9f0123ba449464be054ab0205
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,22 +110,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "Bot\xE3o Config_0"
+      name: Button - Play e Exit_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 64
-        height: 64
+        x: 355
+        y: 797
+        width: 191
+        height: 58
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e8b70e184103bc047a2a0cdd95bbbc01
-      internalID: -1398816096
+      spriteID: c8714ce19971bdf4ba81b6da6e408da7
+      internalID: 757081860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Button - Play e Exit_1
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 649
+        width: 192
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be91e6213f9c96b44a44154e3705b8c9
+      internalID: 1004275931
       vertices: []
       indices: 
       edges: []
@@ -141,7 +162,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      "Bot\xE3o Config_0": -1398816096
+      Button - Play e Exit_0: 757081860
+      Button - Play e Exit_1: 1004275931
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

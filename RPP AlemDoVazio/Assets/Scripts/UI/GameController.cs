@@ -1,29 +1,32 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using Unity.VisualScripting;
 
 public class GameController : MonoBehaviour
 {
     public static GameController instance;
 
+    [Header("Atributtes")]
     private int scoreAmulet;
     public Text amuleText;
     private int totalAmulet;
 
+    [Header("GameObjects")]
     public GameObject pauseObj;
     public GameObject GameOverObj;
-    public GameObject configObj;
+
+    [Header("Play e Pause")]
+    public Button playPauseButton; // Botão para controlar o Play/Pause
+    public Sprite playIcon; // Ícone de Play
+    public Sprite pauseIcon; // Ícone de Pause
 
     private bool isPaused;
 
-    // Start is called before the first frame update
     void Awake()
     {
-       if(instance == null)
+        if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(this.gameObject);
@@ -31,12 +34,14 @@ public class GameController : MonoBehaviour
         else
         {
             Destroy(this.gameObject);
-        }  
+        }
     }
 
     private void Start()
     {
         totalAmulet = PlayerPrefs.GetInt("scoreAmulet");
+        UpdatePlayPauseButtonIcon(); // Inicializa o botão com o ícone correto
+        playPauseButton.onClick.AddListener(TogglePlayPause); // Configura o evento do botão
     }
 
     public void UpdateAmulet(int value)
@@ -46,27 +51,36 @@ public class GameController : MonoBehaviour
         
         PlayerPrefs.SetInt("score", scoreAmulet + totalAmulet);
     }
-    
-    void Update(){
-        
-        PauseGame();
-    }
 
-    public void PauseGame()
+    private void Update()
     {
+        // Alterna o pause quando a tecla P é pressionada
         if (Input.GetKeyDown(KeyCode.P))
         {
-            isPaused = !isPaused;
-            pauseObj.SetActive(isPaused);
+            TogglePlayPause();
         }
+    }
 
-        if (isPaused)
+    private void TogglePlayPause()
+    {
+        // Alterna o estado de pausa
+        isPaused = !isPaused;
+        pauseObj.SetActive(isPaused);
+
+        // Define o tempo do jogo com base no estado
+        Time.timeScale = isPaused ? 0 : 1;
+
+        // Atualiza o ícone do botão
+        UpdatePlayPauseButtonIcon();
+    }
+
+    private void UpdatePlayPauseButtonIcon()
+    {
+        // Atualiza o ícone do botão conforme o estado de pausa
+        Image buttonImage = playPauseButton.GetComponent<Image>();
+        if (buttonImage != null)
         {
-            Time.timeScale = 0;
-        }
-        else
-        {
-            Time.timeScale = 1;
+            buttonImage.sprite = isPaused ? playIcon : pauseIcon;
         }
     }
 
@@ -74,7 +88,6 @@ public class GameController : MonoBehaviour
     {
         GameOverObj.SetActive(true);
     }
-    
 
     public void RestartGame()
     {
@@ -82,9 +95,10 @@ public class GameController : MonoBehaviour
         SceneManager.LoadScene(1);
         GameOverObj.SetActive(false);
     }
-
-    public void ConfigGame()
+    
+    public void ExitGame()
     {
-        configObj.SetActive(true);
+        Debug.Log("Sair do jogo acionado!");
+        Application.Quit();
     }
 }
