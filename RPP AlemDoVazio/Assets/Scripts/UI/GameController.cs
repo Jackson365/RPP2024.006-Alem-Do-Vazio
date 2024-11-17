@@ -16,6 +16,8 @@ public class GameController : MonoBehaviour
     [Header("GameObjects")]
     public GameObject pauseObj;
     public GameObject GameOverObj;
+    public GameObject CanvasObj;
+    public GameObject MenuObj;
 
     [Header("Play e Pause")]
     public Button playPauseButton; // Botão para controlar o Play/Pause
@@ -40,20 +42,26 @@ public class GameController : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+    
+    public bool IsGamePaused()
+    {
+        return isPaused;
+    }
 
     private void Start()
     {
         totalAmulet = PlayerPrefs.GetInt("scoreAmulet");
-        UpdatePlayPauseButtonIcon(); // Inicializa o botão com o ícone correto
-        playPauseButton.onClick.AddListener(TogglePlayPause); // Configura o evento do botão
+        UpdatePlayPauseButtonIcon(); 
+        playPauseButton.onClick.AddListener(TogglePlayPause); 
         
-        // Garantir que o ícone da flecha seja atualizado no início
-        selectedBowIndex = 0; // A primeira flecha é a padrão
-        UpdateBowIcon(selectedBowIndex); // Atualiza a UI para refletir a primeira flecha
+        selectedBowIndex = 0; 
+        UpdateBowIcon(selectedBowIndex);
     }
     
     public void UpdateBowIcon(int selectedIndex)
     {
+        if (instance.IsGamePaused()) return;
+
         selectedBowIndex = selectedIndex;
 
         // Define as cores para o ícone ativo e os ícones inativos
@@ -126,6 +134,26 @@ public class GameController : MonoBehaviour
         
         SceneManager.LoadScene(1);
         StartCoroutine(RestartMusicAfterSceneLoad());
+        
+    }
+    
+    public void ExitGameMenu()
+    {
+        isPaused = false; 
+        UpdatePlayPauseButtonIcon();
+        
+        Time.timeScale = 1;
+        
+        GameOverObj.SetActive(false);
+        pauseObj.SetActive(false);
+
+        SceneManager.LoadScene(0);
+        StartCoroutine(RestartMusicAfterSceneLoad());
+        //Volta a vida á quantidade inicial
+        HealthObserver.ResetHealth();
+        
+        CanvasObj.SetActive(false);
+        MenuObj.SetActive(true);
     }
     
     private IEnumerator RestartMusicAfterSceneLoad()

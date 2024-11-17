@@ -4,17 +4,27 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public GameObject CanvasObj;
+    public GameObject CanvasObj; 
+    public GameObject MenuObj;
 
     public void LoadGame()
     {
+        StartCoroutine(ActivateMenuAfterLoad());
+        
         SceneManager.LoadScene(1);
-        StartCoroutine(TimeCanvasOBJ());
+        StartCoroutine(ActivateCanvasAfterLoad());
+        
+    }
+
+    private IEnumerator ActivateCanvasAfterLoad()
+    {
+        yield return null;
+        CanvasObj.SetActive(true);
     }
     
-    private IEnumerator TimeCanvasOBJ()
+    private IEnumerator ActivateMenuAfterLoad()
     {
-        yield return new WaitForSeconds(0.1f);
-        CanvasObj.SetActive(true);
+        yield return null;
+        MenuObj.SetActive(false);
     }
 }

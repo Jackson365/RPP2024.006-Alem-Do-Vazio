@@ -156,6 +156,8 @@ public class PlayerController : MonoBehaviour
     
     void ChangeBow()
     {
+        if (GameController.instance.IsGamePaused()) return;
+        
         // Verifica se o jogador pressionou as teclas de seta para cima ou para baixo
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
@@ -173,6 +175,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Z))
         {
+            if (GameController.instance.IsGamePaused()) return;
             FireSelectedBow();
         }
     }
