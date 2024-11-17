@@ -58,6 +58,15 @@ public class GameController : MonoBehaviour
         UpdateBowIcon(selectedBowIndex);
     }
     
+    private void Update()
+    {
+        // Alterna o pause quando a tecla P é pressionada
+        //if (Input.GetKeyDown(KeyCode.P))
+        //{
+        //TogglePlayPause();
+        //}
+    }
+    
     public void UpdateBowIcon(int selectedIndex)
     {
         if (instance.IsGamePaused()) return;
@@ -89,15 +98,7 @@ public class GameController : MonoBehaviour
         
         PlayerPrefs.SetInt("score", scoreAmulet + totalAmulet);
     }
-
-    private void Update()
-    {
-        // Alterna o pause quando a tecla P é pressionada
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            TogglePlayPause();
-        }
-    }
+    
 
     private void TogglePlayPause()
     {
@@ -125,16 +126,30 @@ public class GameController : MonoBehaviour
     public void GameOver()
     {
         GameOverObj.SetActive(true);
+        Time.timeScale = 0;
     }
 
     public void RestartGame()
     {
+        isPaused = false; 
+        UpdatePlayPauseButtonIcon();
+        
+        Time.timeScale = 1;
+        
+        selectedBowIndex = 0; 
+        UpdateBowIcon(selectedBowIndex);
+        
         HealthObserver.ResetHealth();
         GameOverObj.SetActive(false);
         
         SceneManager.LoadScene(1);
         StartCoroutine(RestartMusicAfterSceneLoad());
         
+        PlayerController player = FindObjectOfType<PlayerController>();
+        if (player != null)
+        {
+            player.ResetBowSelection();
+        }
     }
     
     public void ExitGameMenu()
@@ -144,16 +159,28 @@ public class GameController : MonoBehaviour
         
         Time.timeScale = 1;
         
+        selectedBowIndex = 0; 
+        UpdateBowIcon(selectedBowIndex);
+        
         GameOverObj.SetActive(false);
         pauseObj.SetActive(false);
 
         SceneManager.LoadScene(0);
         StartCoroutine(RestartMusicAfterSceneLoad());
+        
         //Volta a vida á quantidade inicial
         HealthObserver.ResetHealth();
         
+        VolumeObserver.CurrentVolume = 1.0f;
+        
         CanvasObj.SetActive(false);
         MenuObj.SetActive(true);
+        
+        PlayerController player = FindObjectOfType<PlayerController>();
+        if (player != null)
+        {
+            player.ResetBowSelection();
+        }
     }
     
     private IEnumerator RestartMusicAfterSceneLoad()

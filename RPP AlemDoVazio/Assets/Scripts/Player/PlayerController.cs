@@ -154,6 +154,11 @@ public class PlayerController : MonoBehaviour
         }
     }
     
+    public void ResetBowSelection()
+    {
+        selectedBowIndex = 0;
+    }
+    
     void ChangeBow()
     {
         if (GameController.instance.IsGamePaused()) return;

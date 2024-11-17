@@ -15,6 +15,7 @@ public class VolumeManager : MonoBehaviour
     {
         // Configura o volume inicial
         lastVolume = VolumeObserver.CurrentVolume;
+        isMuted = lastVolume == 0.0f;
         UpdateMuteButtonIcon();
 
         // Configura o evento de clique para o botão
@@ -43,7 +44,14 @@ public class VolumeManager : MonoBehaviour
 
     private void UpdateMuteButtonIcon()
     {
+        UpdateMuteButtonIcon(VolumeObserver.CurrentVolume); // Chama a versão com parâmetro
+    }
+    
+    public void UpdateMuteButtonIcon(float newVolume)
+    {
         // Atualiza o ícone do botão conforme o estado de som
+        isMuted = VolumeObserver.CurrentVolume == 0.0f;
+        
         Image buttonImage = muteButton.GetComponent<Image>();
         if (buttonImage != null)
         {
@@ -54,11 +62,13 @@ public class VolumeManager : MonoBehaviour
     private void OnEnable()
     {
         VolumeObserver.VolumeChanged += UpdateAudioSources;
+        VolumeObserver.VolumeChanged += UpdateMuteButtonIcon; // Inscreve-se para atualizar o ícone quando o volume muda
     }
 
     private void OnDisable()
     {
         VolumeObserver.VolumeChanged -= UpdateAudioSources;
+        VolumeObserver.VolumeChanged -= UpdateMuteButtonIcon; // Inscreve-se para atualizar o ícone quando o volume muda
     }
 
     private void UpdateAudioSources(float newVolume)
