@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -108,7 +108,469 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Floresta Assombrada_0
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 527
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5cde2483aa972b4c8db8d0d7d215166
+      internalID: 1668142826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floresta Assombrada_1
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 527
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72e89fff246b50f40ba8aead72ad063e
+      internalID: 2013954678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floresta Assombrada_2
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 527
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b39d43376b0c2d84ab554685a859b682
+      internalID: -111794999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floresta Assombrada_3
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 307
+        width: 77
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4df4ea32e6c7ff543bc4b3d99b71fe64
+      internalID: 1497708516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floresta Assombrada_4
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 441
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eec9b0ae661f28743953e79e223f4b69
+      internalID: -775220891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floresta Assombrada_5
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 441
+        width: 24
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 012c68320fcdd2c4aa1c5bbadb0ad605
+      internalID: -165003969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floresta Assombrada_6
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 440
+        width: 19
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42dc74c84601b0f45b5cbbba9354d723
+      internalID: 94120248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floresta Assombrada_7
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 307
+        width: 77
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20e695b53d7323f48b39416d1669e63f
+      internalID: 630164552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floresta Assombrada_8
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 307
+        width: 77
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 922e3f4bb07850b428103d3951d152b4
+      internalID: 543556513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floresta Assombrada_9
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 172
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c6b9772ff4d2f648a8bb4095b9ca3b4
+      internalID: 1603561785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floresta Assombrada_10
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 172
+        width: 76
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4aecceb7bda8445498ceab6d187247ff
+      internalID: -1896517053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floresta Assombrada_11
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 172
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1471de9d61aa464fb4b2c76eee407f8
+      internalID: 1731450482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floresta Assombrada_12
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 91
+        width: 77
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e89a6402b7629b41971394f4140dede
+      internalID: 1925880244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floresta Assombrada_13
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 91
+        width: 76
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 077c6904d7bdf114f851c1b6ba077453
+      internalID: -1825850491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floresta Assombrada_14
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 91
+        width: 79
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0accd61f44b1bdc4481cf892c068fcb8
+      internalID: -992594852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floresta Assombrada_15
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 91
+        width: 77
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a8502a0c9b91be47ba3579dd5688847
+      internalID: 1728748447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floresta Assombrada_16
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 91
+        width: 77
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8143c92f3770c3f4aa06da78f8c8dd79
+      internalID: 563931566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floresta Assombrada_17
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 9
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 617210672255ecf488aefc41ca468903
+      internalID: 275417880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floresta Assombrada_18
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 9
+        width: 76
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b05ef5892100374e9f1e7311356badb
+      internalID: 1197427179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floresta Assombrada_19
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 9
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d0e602dadf778a44a0722fdc47b68b9
+      internalID: -702477726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floresta Assombrada_20
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 9
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d180ef1b823ddb645a70cd5ffc3c991a
+      internalID: 1799771799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floresta Assombrada_21
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 9
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df4819abe2a8036408f1b3b34e0c7838
+      internalID: -817584405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +581,29 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Floresta Assombrada_0: 1668142826
+      Floresta Assombrada_1: 2013954678
+      Floresta Assombrada_10: -1896517053
+      Floresta Assombrada_11: 1731450482
+      Floresta Assombrada_12: 1925880244
+      Floresta Assombrada_13: -1825850491
+      Floresta Assombrada_14: -992594852
+      Floresta Assombrada_15: 1728748447
+      Floresta Assombrada_16: 563931566
+      Floresta Assombrada_17: 275417880
+      Floresta Assombrada_18: 1197427179
+      Floresta Assombrada_19: -702477726
+      Floresta Assombrada_2: -111794999
+      Floresta Assombrada_20: 1799771799
+      Floresta Assombrada_21: -817584405
+      Floresta Assombrada_3: 1497708516
+      Floresta Assombrada_4: -775220891
+      Floresta Assombrada_5: -165003969
+      Floresta Assombrada_6: 94120248
+      Floresta Assombrada_7: 630164552
+      Floresta Assombrada_8: 543556513
+      Floresta Assombrada_9: 1603561785
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
