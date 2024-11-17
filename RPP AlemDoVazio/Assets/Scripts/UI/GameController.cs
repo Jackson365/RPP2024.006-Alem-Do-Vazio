@@ -122,8 +122,16 @@ public class GameController : MonoBehaviour
     public void RestartGame()
     {
         HealthObserver.ResetHealth();
-        SceneManager.LoadScene(1);
         GameOverObj.SetActive(false);
+        
+        SceneManager.LoadScene(1);
+        StartCoroutine(RestartMusicAfterSceneLoad());
+    }
+    
+    private IEnumerator RestartMusicAfterSceneLoad()
+    {
+        yield return null;
+        AudioObserver.OnPlayMusicEvent();
     }
     
     public void ExitGame()

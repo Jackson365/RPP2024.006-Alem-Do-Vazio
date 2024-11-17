@@ -19,6 +19,11 @@ public class BowDesespero : BowController
                 collison.GetComponent<EnemyFlying>().Damage(damage);
                 Destroy(gameObject);
             }
+            
+            if (collison.gameObject.CompareTag("Obstacle"))
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }

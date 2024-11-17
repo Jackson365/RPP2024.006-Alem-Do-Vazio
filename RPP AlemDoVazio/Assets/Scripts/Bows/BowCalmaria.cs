@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class BowCalmaria : BowController
@@ -16,6 +17,11 @@ public class BowCalmaria : BowController
             if (collison.gameObject.tag == "EnemyShoot")
             {
                 collison.GetComponent<EnemyShoot>().Damage(damage);
+                Destroy(gameObject);
+            }
+            
+            if (collison.gameObject.CompareTag("Obstacle"))
+            {
                 Destroy(gameObject);
             }
         }

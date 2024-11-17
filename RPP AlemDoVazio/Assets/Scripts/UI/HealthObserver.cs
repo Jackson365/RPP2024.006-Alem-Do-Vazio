@@ -33,6 +33,7 @@ public static class HealthObserver
     {
         currentHealth = maxHealth;
         NotifyHealthChange();
+        
     }
 
     private static void NotifyHealthChange()

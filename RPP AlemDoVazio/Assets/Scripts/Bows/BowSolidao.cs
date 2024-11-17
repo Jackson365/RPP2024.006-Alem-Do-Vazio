@@ -22,6 +22,11 @@ public class BowSolidao : BowController
                 collison.GetComponent<EnemyPatroll>().Damage(damage);
                 Destroy(gameObject);
             }
+            
+            if (collison.gameObject.CompareTag("Obstacle"))
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }
