@@ -51,20 +51,16 @@ public class EnemyFlying : MonoBehaviour
     private void FollowPlayer()
     {
         float distance = Vector2.Distance(transform.position, playerPos.position);
-
-        // Vira o inimigo na direção do jogador usando flipX
+        
         spriteRenderer.flipX = playerPos.position.x < transform.position.x;
 
         if (distance <= attackRange)
         {
-            // Verifica se já passou o tempo suficiente para um novo ataque
             if (Time.time >= nextAttackTime)
             {
-                // Causa dano ao jogador
                 HealthObserver.TakeDamage(damage);
-                nextAttackTime = Time.time + attackCooldown; // Define o próximo tempo de ataque
+                nextAttackTime = Time.time + attackCooldown;
 
-                // Aciona o knockback ao causar dano
                 TriggerKnockback();
             }
         }
@@ -75,7 +71,6 @@ public class EnemyFlying : MonoBehaviour
         }
         else if (distance >= 4)
         {
-            // Volta para a posição inicial
             anim.SetInteger("Collision", 0);
             transform.position = Vector2.MoveTowards(transform.position, initialPosition, speedEnemy * Time.deltaTime);
         }

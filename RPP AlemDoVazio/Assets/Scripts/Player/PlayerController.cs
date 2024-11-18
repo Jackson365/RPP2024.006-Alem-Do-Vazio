@@ -48,6 +48,7 @@ public class PlayerController : MonoBehaviour
     [Header("Bows")]
     public GameObject[] bows; // Array com prefabs de cada tipo de flecha (Calmaria, Coragem, Desespero)
     private int selectedBowIndex = 0; // Índice da flecha selecionada
+    private bool hasBow = false;
     
     void Start()
     {
@@ -64,6 +65,8 @@ public class PlayerController : MonoBehaviour
         HealthObserver.OnDeath += TriggerDeathAnimation;
         
         enemyLayer = LayerMask.NameToLayer("Enemy");
+        
+        hasBow = false;
     }
     
     
@@ -83,7 +86,11 @@ public class PlayerController : MonoBehaviour
         {
             Move();
             Jump();
-            Bow();
+
+            if (hasBow) // Verifica se o arco foi coletado
+            {
+                Bow();
+            }
         }
     }
 
@@ -169,6 +176,11 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
+    }
+    
+    public void CollectBow() 
+    {
+        hasBow = true;
     }
     
     public void ResetBowSelection()

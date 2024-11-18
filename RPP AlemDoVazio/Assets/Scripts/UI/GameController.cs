@@ -18,6 +18,7 @@ public class GameController : MonoBehaviour
     public GameObject GameOverObj;
     public GameObject CanvasObj;
     public GameObject MenuObj;
+    public GameObject specialBowUI;
 
     [Header("Play e Pause")]
     public Button playPauseButton; // Botão para controlar o Play/Pause
@@ -122,6 +123,24 @@ public class GameController : MonoBehaviour
             buttonImage.sprite = isPaused ? playIcon : pauseIcon;
         }
     }
+    
+    public void ActivateBowUI()
+    {
+        if (specialBowUI != null)
+        {
+            specialBowUI.SetActive(true); // Ativa o GameObject da UI
+        }
+    }
+    
+    public void ResetBowUI()
+    {
+        if (specialBowUI != null)
+        {
+            specialBowUI.SetActive(false); // Desativa a interface de flechas
+        }
+        selectedBowIndex = 0; // Reinicializa o índice da flecha
+        UpdateBowIcon(selectedBowIndex); // Atualiza o ícone de seleção da flecha
+    }
 
     public void GameOver()
     {
@@ -145,6 +164,8 @@ public class GameController : MonoBehaviour
         HealthObserver.ResetHealth();
         GameOverObj.SetActive(false);
         
+        ResetBowUI();
+        
         SceneManager.LoadScene(1);
         StartCoroutine(RestartMusicAfterSceneLoad());
         
@@ -167,6 +188,8 @@ public class GameController : MonoBehaviour
         
         GameOverObj.SetActive(false);
         pauseObj.SetActive(false);
+        
+        ResetBowUI();
 
         SceneManager.LoadScene(0);
         StartCoroutine(RestartMusicAfterSceneLoad());
