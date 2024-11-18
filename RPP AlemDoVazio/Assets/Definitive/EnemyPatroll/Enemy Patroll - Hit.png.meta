@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fd06a499732a25c438b747779ecab6a7
+guid: 381477038f0d584468999f3a87adb20b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,34 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Hit_0
+      name: Enemy Patroll - Hit_0
       rect:
         serializedVersion: 2
-        x: 243
-        y: 513
-        width: 224
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5be8dd19a5f74ab4bacbd09e6226eb05
-      internalID: 954458834
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Hit_1
-      rect:
-        serializedVersion: 2
-        x: 252
+        x: 0
         y: 0
-        width: 224
-        height: 255
+        width: 125
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f9458f2a44bc74d43a8126234219b8fb
-      internalID: -815681268
+      spriteID: 409653d930ca52c4a89111a9d0a10214
+      internalID: 1709066816
       vertices: []
       indices: 
       edges: []
@@ -162,8 +141,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Hit_0: 954458834
-      Hit_1: -815681268
+      Enemy Patroll - Hit_0: 1709066816
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -44,11 +44,13 @@ public class EnemyPatroll : MonoBehaviour
         {
             transform.eulerAngles = new Vector2(0, 0);
             rig.velocity = Vector2.right * speed;
+            anim.SetInteger("Collision", 0);
         }
         else
         {
             transform.eulerAngles = new Vector2(0, 180);
             rig.velocity = Vector2.left * speed;
+            anim.SetInteger("Collision", 0);
         }
         
     }
@@ -56,7 +58,7 @@ public class EnemyPatroll : MonoBehaviour
     public void Damage(int vida)
     {
         health -= vida;
-        //anim.SetTrigger("hit");
+        anim.SetInteger("Collision", 2);
 
         if (health == 4)
         {

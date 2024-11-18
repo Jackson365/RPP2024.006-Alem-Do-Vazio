@@ -105,6 +105,7 @@ public class EnemyShoot : MonoBehaviour
     public void Damage(int vida)
     {
         health -= vida;
+        anim.SetInteger("TransitionShoot", 2);
 
         if (health <= 0)
         {

@@ -195,7 +195,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  jumpForce: 8
+  jumpForce: 13
+  jumpDuplo: 5
   firePoint: {fileID: 970841402426175630}
   slowDownFactor: 3.5
   BushSpeed: 2
@@ -206,13 +207,9 @@ MonoBehaviour:
   kbTime: 0.2
   isKnockRitgh: 1
   bows:
-  - {fileID: 270447463030960703, guid: 6a5a107ffba1a994990b9a1dbd242815, type: 3}
-  - {fileID: 5049081297024909926, guid: 92997dada7ed8e94bbc7ebd5c4705599, type: 3}
-  - {fileID: 5049081297024909926, guid: 3edc3f078f3212f468142b5c4dca0056, type: 3}
-  bowIcons:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 127344874871485338, guid: ad2fd57eb174ccf40acebb0dde7cac5e, type: 3}
+  - {fileID: 5809139862933016860, guid: d981c9019285f82409c9bffdfd015739, type: 3}
+  - {fileID: 7391937006586503542, guid: fd68a649835a5f44ab9809e85a7acbac, type: 3}
 --- !u!1 &3281609672094350847
 GameObject:
   m_ObjectHideFlags: 0

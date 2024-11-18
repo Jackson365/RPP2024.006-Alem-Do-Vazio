@@ -8,7 +8,8 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Atributtes")] 
     public float speed = 5;
-    public float jumpForce = 8;
+    public float jumpForce = 13;
+    public float jumpDuplo = 5;
     
     private float movement;
     
@@ -21,6 +22,8 @@ public class PlayerController : MonoBehaviour
     private bool isJumping;
     private bool doubleJump;
     private bool isFire;
+    private int enemyLayer;
+
     
     [Header("SlowMud")] 
     public float slowDownFactor = 3.5f;
@@ -55,6 +58,20 @@ public class PlayerController : MonoBehaviour
         originalJumpForce = jumpForce;
 
         selectedBowIndex = 0; 
+        
+        // Assinamos os eventos de dano e morte
+        HealthObserver.OnTakeDamage += TriggerDamageAnimation;
+        HealthObserver.OnDeath += TriggerDeathAnimation;
+        
+        enemyLayer = LayerMask.NameToLayer("Enemy");
+    }
+    
+    
+    void OnDestroy()
+    {
+        // Desinscrevemos os eventos para evitar erros
+        HealthObserver.OnTakeDamage -= TriggerDamageAnimation;
+        HealthObserver.OnDeath -= TriggerDeathAnimation;
     }
     
     void Update()
@@ -145,7 +162,7 @@ public class PlayerController : MonoBehaviour
                 if (doubleJump)
                 {
                     anim.SetInteger("Transition", 2);
-                    rig2D.AddForce(new Vector2(0,jumpForce * 2), ForceMode2D.Impulse);
+                    rig2D.AddForce(new Vector2(0,jumpDuplo * 2), ForceMode2D.Impulse);
                     doubleJump = false;
                     //ParticleObserver.OnParticleSpawnEvent(transform.position);
                     AudioObserver.OnPlaySfxEvent("Jump");
@@ -210,15 +227,31 @@ public class PlayerController : MonoBehaviour
         isFire = false;
         anim.SetInteger("Transition", 0);
     }
-
     
-    //VÃO ESTÁ EM GAMECONTROLLER
-        
-    //CHAMAR ISTO EM RECOMEÇAR!
-    //AudioObserver.OnPlayMusicEvent();
-        
-    //CHAMAR EM GAME OVER!
-    //AudioObserver.OnStopMusicEvent()
+    private void TriggerDamageAnimation()
+    {
+        if (anim != null)
+        {
+            anim.SetInteger("Transition", 4);  // Define o estado para Dano
+            StartCoroutine(ResetDamageAnimation());
+        }
+    }
+
+    private IEnumerator ResetDamageAnimation()
+    {
+        yield return new WaitForSeconds(0.5f); // Duração da animação de dano
+        anim.SetInteger("Transition", 0); // Retorna ao estado Idle após o dano
+    }
+
+    private void TriggerDeathAnimation()
+    {
+        if (anim != null)
+        {
+            anim.SetInteger("Transition", 5);
+            // Desativa o movimento e outras ações
+            this.enabled = false;
+        }
+    }
     
     private void OnCollisionEnter2D(Collision2D other)
     {
@@ -303,3 +336,4 @@ public class PlayerController : MonoBehaviour
         }
     }
 }
+

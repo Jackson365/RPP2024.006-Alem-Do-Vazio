@@ -127,6 +127,9 @@ public class GameController : MonoBehaviour
     {
         GameOverObj.SetActive(true);
         Time.timeScale = 0;
+        
+        //Faz o som parar apos morrer
+        AudioObserver.OnStopMusicEvent();
     }
 
     public void RestartGame()

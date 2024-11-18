@@ -84,11 +84,19 @@ public class EnemyFlying : MonoBehaviour
     public void Damage (int vida)
     {
         health -= vida;
+        anim.SetTrigger("Hit");
 
         if(health <= 0)
         {
             Destroy(gameObject);
         }
+    }
+    
+    private IEnumerator TriggerHitAnimation()
+    {
+        anim.SetInteger("Collision", 2);
+        yield return new WaitForSeconds(0.2f);
+        anim.SetInteger("Collision", 0);
     }
     
     private void TriggerKnockback()
