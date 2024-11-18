@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1985575298859998060}
   - component: {fileID: 4244820115458918927}
   - component: {fileID: 5172944977258746338}
-  - component: {fileID: 6609735696397605394}
+  - component: {fileID: 8453630555728773719}
   m_Layer: 0
   m_Name: 'EnemyFlying '
   m_TagString: EnemyFlying
@@ -171,7 +171,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &6609735696397605394
+--- !u!114 &8453630555728773719
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -180,12 +180,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1667963492117296646}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8350d9426d7639a4abd4c17f296b4626, type: 3}
+  m_Script: {fileID: 11500000, guid: 11f940fd889fb8b41b6d0962f1c1fda5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
+  health: 4
   damage: 1
-  playerPos: {fileID: 0}
+  playerPos: {fileID: 4643353929743623071, guid: 679c828102643d448b807d99f42bbcef, type: 3}
   rigFly: {fileID: 5172944977258746338}
   spriteRenderer: {fileID: 8152095447878131514}
   speedEnemy: 2.5
@@ -193,4 +193,4 @@ MonoBehaviour:
   attackRange: 1
   distance: 4
   attackCooldown: 0.5
-  _playerController: {fileID: 0}
+  _playerController: {fileID: 2400423422717035569, guid: 679c828102643d448b807d99f42bbcef, type: 3}

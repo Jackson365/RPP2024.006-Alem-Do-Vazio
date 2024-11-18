@@ -267,6 +267,7 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("SlowMud")) 
         {
             speed -= slowDownFactor;
+            StartCoroutine(ReduceJumpTemporarily(1.5f, 4));
         }
 
         if (other.gameObject.CompareTag("Bush"))

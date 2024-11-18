@@ -1,0 +1,281 @@
+fileFormatVersion: 2
+guid: db377914e51ea294aab5d917a60b5fa2
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "Nome - Tutorial - Espa\xE7oDuplo_0"
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 556
+        width: 416
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 628fdf22d2facc9469fae1ff34a90b37
+      internalID: 1819764734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Nome - Tutorial - Espa\xE7oDuplo_6"
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 450
+        width: 279
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cd5caffea306244ba4bcead981983c6
+      internalID: -1664493046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Nome - Tutorial - Espa\xE7oDuplo_10"
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 343
+        width: 350
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13131542a94f09845b210228666b7393
+      internalID: 698010832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Nome - Tutorial - Espa\xE7oDuplo_15"
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 236
+        width: 279
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be7add7c140b5fa46a537655a7a36f37
+      internalID: 801830218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Nome - Tutorial - Espa\xE7oDuplo_19"
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 129
+        width: 279
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 413654e41b07f094694ad8153454eefe
+      internalID: 534848312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Nome - Tutorial - Espa\xE7oDuplo_23"
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 23
+        width: 350
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbdf938d348a9a14f847f1dcaf0730cc
+      internalID: -874420506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      "Nome - Tutorial - Espa\xE7oDuplo_0": 1819764734
+      "Nome - Tutorial - Espa\xE7oDuplo_1": -638037732
+      "Nome - Tutorial - Espa\xE7oDuplo_10": 698010832
+      "Nome - Tutorial - Espa\xE7oDuplo_11": -1511058370
+      "Nome - Tutorial - Espa\xE7oDuplo_12": -489500420
+      "Nome - Tutorial - Espa\xE7oDuplo_13": 497579001
+      "Nome - Tutorial - Espa\xE7oDuplo_14": -361509095
+      "Nome - Tutorial - Espa\xE7oDuplo_15": 801830218
+      "Nome - Tutorial - Espa\xE7oDuplo_16": -1678502545
+      "Nome - Tutorial - Espa\xE7oDuplo_17": 394490593
+      "Nome - Tutorial - Espa\xE7oDuplo_18": 2049214364
+      "Nome - Tutorial - Espa\xE7oDuplo_19": 534848312
+      "Nome - Tutorial - Espa\xE7oDuplo_2": -1372500907
+      "Nome - Tutorial - Espa\xE7oDuplo_20": -807548920
+      "Nome - Tutorial - Espa\xE7oDuplo_21": 1615624605
+      "Nome - Tutorial - Espa\xE7oDuplo_22": 506588985
+      "Nome - Tutorial - Espa\xE7oDuplo_23": -874420506
+      "Nome - Tutorial - Espa\xE7oDuplo_24": 1755747910
+      "Nome - Tutorial - Espa\xE7oDuplo_25": -565903585
+      "Nome - Tutorial - Espa\xE7oDuplo_26": -796809222
+      "Nome - Tutorial - Espa\xE7oDuplo_27": 2083095119
+      "Nome - Tutorial - Espa\xE7oDuplo_3": -626460389
+      "Nome - Tutorial - Espa\xE7oDuplo_4": 1093827555
+      "Nome - Tutorial - Espa\xE7oDuplo_5": -81454120
+      "Nome - Tutorial - Espa\xE7oDuplo_6": -1664493046
+      "Nome - Tutorial - Espa\xE7oDuplo_7": -583131605
+      "Nome - Tutorial - Espa\xE7oDuplo_8": 1536722055
+      "Nome - Tutorial - Espa\xE7oDuplo_9": -1498479307
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
