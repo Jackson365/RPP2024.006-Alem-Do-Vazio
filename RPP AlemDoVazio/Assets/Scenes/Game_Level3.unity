@@ -135,6 +135,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FallingPlataform (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 7015525140107324657, guid: 27e80768d17ec444e88ab05ac4e25407, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 442083752, guid: 68055eb99d5dec94fa82b92ed8c46bfc, type: 3}
     - target: {fileID: 7962182573668276078, guid: 27e80768d17ec444e88ab05ac4e25407, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -347,6 +351,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FallingPlataform
       objectReference: {fileID: 0}
+    - target: {fileID: 7015525140107324657, guid: 27e80768d17ec444e88ab05ac4e25407, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 442083752, guid: 68055eb99d5dec94fa82b92ed8c46bfc, type: 3}
     - target: {fileID: 7962182573668276078, guid: 27e80768d17ec444e88ab05ac4e25407, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -593,6 +601,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FallingPlataform (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7015525140107324657, guid: 27e80768d17ec444e88ab05ac4e25407, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 442083752, guid: 68055eb99d5dec94fa82b92ed8c46bfc, type: 3}
     - target: {fileID: 7962182573668276078, guid: 27e80768d17ec444e88ab05ac4e25407, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -707,6 +719,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8023797562516043967, guid: 34961e3028ddf274db5bf85575032d9c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 442083752, guid: 68055eb99d5dec94fa82b92ed8c46bfc, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -847,6 +863,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FallingPlataform (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 7015525140107324657, guid: 27e80768d17ec444e88ab05ac4e25407, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 442083752, guid: 68055eb99d5dec94fa82b92ed8c46bfc, type: 3}
     - target: {fileID: 7962182573668276078, guid: 27e80768d17ec444e88ab05ac4e25407, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -1229,6 +1249,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FallingPlataform (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7015525140107324657, guid: 27e80768d17ec444e88ab05ac4e25407, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 442083752, guid: 68055eb99d5dec94fa82b92ed8c46bfc, type: 3}
     - target: {fileID: 7962182573668276078, guid: 27e80768d17ec444e88ab05ac4e25407, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -1343,6 +1367,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8023797562516043967, guid: 34961e3028ddf274db5bf85575032d9c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 442083752, guid: 68055eb99d5dec94fa82b92ed8c46bfc, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2053,6 +2081,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 7015525140107324657, guid: 27e80768d17ec444e88ab05ac4e25407, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 442083752, guid: 68055eb99d5dec94fa82b92ed8c46bfc, type: 3}
     - target: {fileID: 7962182573668276078, guid: 27e80768d17ec444e88ab05ac4e25407, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -2557,6 +2589,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8023797562516043967, guid: 34961e3028ddf274db5bf85575032d9c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 442083752, guid: 68055eb99d5dec94fa82b92ed8c46bfc, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2755,6 +2791,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 7015525140107324657, guid: 27e80768d17ec444e88ab05ac4e25407, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 442083752, guid: 68055eb99d5dec94fa82b92ed8c46bfc, type: 3}
     - target: {fileID: 7962182573668276078, guid: 27e80768d17ec444e88ab05ac4e25407, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -2828,6 +2868,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FallingPlataform (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 7015525140107324657, guid: 27e80768d17ec444e88ab05ac4e25407, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 442083752, guid: 68055eb99d5dec94fa82b92ed8c46bfc, type: 3}
     - target: {fileID: 7962182573668276078, guid: 27e80768d17ec444e88ab05ac4e25407, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -3028,6 +3072,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8023797562516043967, guid: 34961e3028ddf274db5bf85575032d9c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 442083752, guid: 68055eb99d5dec94fa82b92ed8c46bfc, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3193,6 +3241,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 7015525140107324657, guid: 27e80768d17ec444e88ab05ac4e25407, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 442083752, guid: 68055eb99d5dec94fa82b92ed8c46bfc, type: 3}
     - target: {fileID: 7962182573668276078, guid: 27e80768d17ec444e88ab05ac4e25407, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -3340,6 +3392,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FallingPlataform (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 7015525140107324657, guid: 27e80768d17ec444e88ab05ac4e25407, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 442083752, guid: 68055eb99d5dec94fa82b92ed8c46bfc, type: 3}
     - target: {fileID: 7962182573668276078, guid: 27e80768d17ec444e88ab05ac4e25407, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -3662,6 +3718,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FallingPlataform (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7015525140107324657, guid: 27e80768d17ec444e88ab05ac4e25407, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 442083752, guid: 68055eb99d5dec94fa82b92ed8c46bfc, type: 3}
     - target: {fileID: 7962182573668276078, guid: 27e80768d17ec444e88ab05ac4e25407, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -44548,6 +44608,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8023797562516043967, guid: 34961e3028ddf274db5bf85575032d9c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 442083752, guid: 68055eb99d5dec94fa82b92ed8c46bfc, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
