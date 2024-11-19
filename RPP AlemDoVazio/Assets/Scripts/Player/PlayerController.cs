@@ -158,6 +158,7 @@ public class PlayerController : MonoBehaviour
             if (!isJumping)
             {
                 anim.SetInteger("Transition", 2);
+                rig2D.velocity = Vector2.zero;
                 rig2D.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
                 doubleJump = true;
                 isJumping = true;
@@ -169,6 +170,7 @@ public class PlayerController : MonoBehaviour
                 if (doubleJump)
                 {
                     anim.SetInteger("Transition", 2);
+                    rig2D.velocity = Vector2.zero;
                     rig2D.AddForce(new Vector2(0,jumpDuplo * 2), ForceMode2D.Impulse);
                     doubleJump = false;
                     //ParticleObserver.OnParticleSpawnEvent(transform.position);
