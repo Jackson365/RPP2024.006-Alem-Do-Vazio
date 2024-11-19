@@ -166,7 +166,10 @@ public class GameController : MonoBehaviour
         
         ResetBowUI();
         
-        SceneManager.LoadScene(1);
+        //SceneManager.LoadScene(1);
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex);
+        
         StartCoroutine(RestartMusicAfterSceneLoad());
         
         PlayerController player = FindObjectOfType<PlayerController>();
