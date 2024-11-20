@@ -19,6 +19,7 @@ public class GameController : MonoBehaviour
     public GameObject CanvasObj;
     public GameObject MenuObj;
     public GameObject specialBowUI;
+    public GameObject sound;
 
     [Header("Play e Pause")]
     public Button playPauseButton; // Botão para controlar o Play/Pause
@@ -58,14 +59,19 @@ public class GameController : MonoBehaviour
         selectedBowIndex = 0; 
         UpdateBowIcon(selectedBowIndex);
     }
-    
+
     private void Update()
     {
-        // Alterna o pause quando a tecla P é pressionada
-        //if (Input.GetKeyDown(KeyCode.P))
-        //{
-        //TogglePlayPause();
-        //}
+        CheckCurrentScene();
+    }
+
+    private void CheckCurrentScene()
+    {
+        if (SceneManager.GetActiveScene().buildIndex == 2)
+        {
+            CanvasObj.SetActive(true);
+            sound.SetActive(true);
+        }
     }
     
     public void UpdateBowIcon(int selectedIndex)

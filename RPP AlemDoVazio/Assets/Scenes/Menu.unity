@@ -180,6 +180,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4477941ca9e69c4da35df816d6fe3ff, type: 3}
+--- !u!1 &1154961030 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2996196427473313267, guid: bea2c5389eb30314dab8c6269a2dc354, type: 3}
+  m_PrefabInstance: {fileID: 8062049604333316671}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8062049604333316671
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -228,6 +233,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2290073616719084439, guid: bea2c5389eb30314dab8c6269a2dc354, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2996196427473313267, guid: bea2c5389eb30314dab8c6269a2dc354, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5342209697254247462, guid: bea2c5389eb30314dab8c6269a2dc354, type: 3}
+      propertyPath: sound
+      value: 
+      objectReference: {fileID: 1154961030}
     - target: {fileID: 5342209697254247462, guid: bea2c5389eb30314dab8c6269a2dc354, type: 3}
       propertyPath: Jogador
       value: 

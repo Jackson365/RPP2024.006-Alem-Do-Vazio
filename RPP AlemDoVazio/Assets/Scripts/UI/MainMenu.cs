@@ -12,7 +12,7 @@ public class MainMenu : MonoBehaviour
         StartCoroutine(ActivateMenuAfterLoad());
         
         SceneManager.LoadScene(1);
-        StartCoroutine(ActivateCanvasAfterLoad());
+        //StartCoroutine(ActivateCanvasAfterLoad());
         
     }
 
