@@ -196,7 +196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   jumpForce: 13
-  jumpDuplo: 5
+  jumpDuplo: 6.5
   firePoint: {fileID: 970841402426175630}
   slowDownFactor: 3.5
   BushSpeed: 2
@@ -210,7 +210,6 @@ MonoBehaviour:
   - {fileID: 127344874871485338, guid: ad2fd57eb174ccf40acebb0dde7cac5e, type: 3}
   - {fileID: 5809139862933016860, guid: d981c9019285f82409c9bffdfd015739, type: 3}
   - {fileID: 7391937006586503542, guid: fd68a649835a5f44ab9809e85a7acbac, type: 3}
-  respowCheck: {x: 0, y: 0, z: 0}
 --- !u!1 &3281609672094350847
 GameObject:
   m_ObjectHideFlags: 0
