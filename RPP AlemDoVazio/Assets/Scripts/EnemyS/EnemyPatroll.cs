@@ -20,6 +20,9 @@ public class EnemyPatroll : MonoBehaviour
     public float walkTime;
     public GameObject attackObj;
     
+    public Transform nomeImagem; 
+    public Vector3 nomeOffset = new Vector3(0, 1.4f, 0);
+    
     public PlayerController _playerController;
 
     // Start is called before the first frame update
@@ -53,6 +56,15 @@ public class EnemyPatroll : MonoBehaviour
             anim.SetInteger("Collision", 0);
         }
         
+    }
+
+    private void Update()
+    {
+        if (nomeImagem != null)
+        {
+            nomeImagem.position = transform.position + nomeOffset;
+            nomeImagem.rotation = Quaternion.identity;
+        }
     }
 
     public void Damage(int vida)

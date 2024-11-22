@@ -28,6 +28,9 @@ public class EnemyShoot : MonoBehaviour
     public Rigidbody2D rig;
     public Animator anim;
     
+    public Transform nomeImagem; 
+    public Vector3 nomeOffset = new Vector3(0, 1.4f, 0);
+    
     // Camada para os obstáculos que bloqueiam a visão
     public LayerMask obstacleLayer;
 
@@ -70,6 +73,12 @@ public class EnemyShoot : MonoBehaviour
         if (distance < 5 && PlayerInSight())
         {
             FireShoot();
+        }
+        
+        if (nomeImagem != null)
+        {
+            nomeImagem.position = transform.position + nomeOffset;
+            nomeImagem.rotation = Quaternion.identity;
         }
     }
 

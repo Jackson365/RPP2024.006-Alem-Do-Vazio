@@ -32,6 +32,9 @@ public class EnemyFlying : MonoBehaviour
     public float attackCooldown = 0.5f;  // Tempo entre os ataques
     private float nextAttackTime = 0f; // Próximo tempo permitido para atacar
     
+    public Transform nomeImagem; 
+    public Vector3 nomeOffset = new Vector3(0, 1.4f, 0);
+    
     public PlayerController _playerController;
 
 
@@ -46,6 +49,12 @@ public class EnemyFlying : MonoBehaviour
     private void Update()
     {
         FollowPlayer();
+        
+        if (nomeImagem != null)
+        {
+            nomeImagem.position = transform.position + nomeOffset;
+            nomeImagem.rotation = Quaternion.identity;
+        }
     }
 
     private void FollowPlayer()

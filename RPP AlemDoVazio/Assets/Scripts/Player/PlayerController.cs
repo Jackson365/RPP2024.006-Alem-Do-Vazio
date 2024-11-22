@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     public float jumpForce = 13;
     public float jumpDuplo = 5;
     
-    private float movement;
+    public float movement;
     
     [Header("Components")]
     public Transform firePoint;
@@ -21,13 +21,13 @@ public class PlayerController : MonoBehaviour
     [Header("Others")]
     private bool isJumping;
     private bool doubleJump;
-    private bool isFire;
+    public bool isFire;
     private int enemyLayer;
 
     
     [Header("SlowMud")] 
     public float slowDownFactor = 3.5f;
-    private float originalSpeed;
+    public float originalSpeed;
 
     [Header("Bush")] public float BushSpeed = 2f;
 
@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour
     public bool isKnockRitgh;
     
     [Header("EnemyShoot")]
-    private bool isParalyzed = false;
+    public bool isParalyzed = false;
     
     [Header("Bows")]
     public GameObject[] bows; // Array com prefabs de cada tipo de flecha (Calmaria, Coragem, Desespero)
