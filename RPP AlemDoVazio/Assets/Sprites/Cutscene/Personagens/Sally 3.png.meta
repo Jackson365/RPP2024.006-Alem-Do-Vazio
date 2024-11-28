@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b97fe5cb81d1e4349b950d2bb64743bb
+guid: 52bb6f082858ca9469e9a1a25247d259
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Perfil - Sally_0
+      name: Sally 3_0
       rect:
         serializedVersion: 2
-        x: 17
-        y: 21
-        width: 55
-        height: 68
+        x: 5
+        y: 8
+        width: 27
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a572e791cc33cc040aeba2d7e5535b07
-      internalID: -643375248
+      spriteID: 93685983b72310d49b4cd155d07402fe
+      internalID: 643274942
       vertices: []
       indices: 
       edges: []
@@ -141,7 +141,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Perfil - Sally_0: -643375248
+      Sally 3_0: 643274942
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

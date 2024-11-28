@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
     private bool doubleJump;
     public bool isFire;
     private int enemyLayer;
+    public GameObject LimitadorInicio;
 
     
     [Header("SlowMud")] 
@@ -277,6 +278,11 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("FallingPlatform"))
         {
             jumpForce -= 3;
+        }
+
+        if (other.gameObject.CompareTag("Limitador"))
+        {
+            LimitadorInicio.SetActive(true);
         }
     }
     

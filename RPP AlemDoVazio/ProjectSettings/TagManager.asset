@@ -16,6 +16,8 @@ TagManager:
   - EnemyPatroll
   - EnemyShoot
   - EnemyDesespero
+  - Enemy
+  - Limitador
   layers:
   - Default
   - TransparentFX
