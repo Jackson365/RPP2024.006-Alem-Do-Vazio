@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public GameObject CanvasObj; 
+    //public GameObject CanvasObj; 
     public GameObject MenuObj;
 
     public void LoadGame()
@@ -16,11 +16,11 @@ public class MainMenu : MonoBehaviour
         
     }
 
-    private IEnumerator ActivateCanvasAfterLoad()
-    {
-        yield return null;
-        CanvasObj.SetActive(true);
-    }
+    //private IEnumerator ActivateCanvasAfterLoad()
+    //{
+        //yield return null;
+        //CanvasObj.SetActive(true);
+    //}
     
     private IEnumerator ActivateMenuAfterLoad()
     {

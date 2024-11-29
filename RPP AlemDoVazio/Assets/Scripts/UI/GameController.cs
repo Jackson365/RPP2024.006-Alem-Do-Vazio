@@ -43,7 +43,36 @@ public class GameController : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+        
+        
+        if (SceneManager.GetActiveScene().buildIndex == 0) 
+        {
+            CanvasObj.SetActive(false);
+        }
     }
+    
+    //
+    private void OnEnable()
+    {
+        // Inscreve-se no evento para detectar o carregamento de novas cenas
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        // Remove a inscrição ao evento
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // Verifica se é a cena do menu (índice 0) e desativa o Canvas no primeiro frame
+        if (scene.buildIndex == 0)
+        {
+            CanvasObj.SetActive(false);
+        }
+    }
+    //
     
     public bool IsGamePaused()
     {
@@ -63,6 +92,11 @@ public class GameController : MonoBehaviour
     private void Update()
     {
         CheckCurrentScene();
+        
+        //if (SceneManager.GetActiveScene().buildIndex == 0 && CanvasObj.activeSelf)
+        //{
+            //CanvasObj.SetActive(false);
+        //}
     }
 
     private void CheckCurrentScene()
@@ -201,6 +235,8 @@ public class GameController : MonoBehaviour
         ResetBowUI();
 
         SceneManager.LoadScene(0);
+        
+        //StartCoroutine(DisableCanvasAfterSceneLoad());
         StartCoroutine(RestartMusicAfterSceneLoad());
         
         //Volta a vida á quantidade inicial
@@ -208,7 +244,7 @@ public class GameController : MonoBehaviour
         
         VolumeObserver.CurrentVolume = 1.0f;
         
-        CanvasObj.SetActive(false);
+        //CanvasObj.SetActive(true);
         MenuObj.SetActive(true);
         
         PlayerController player = FindObjectOfType<PlayerController>();
@@ -217,6 +253,12 @@ public class GameController : MonoBehaviour
             player.ResetBowSelection();
         }
     }
+    
+    //private IEnumerator DisableCanvasAfterSceneLoad()
+    //{
+        //yield return new WaitForEndOfFrame(); // Aguarda o próximo frame
+        //CanvasObj.SetActive(false); // Agora desativa o canvas
+    //}
     
     private IEnumerator RestartMusicAfterSceneLoad()
     {
