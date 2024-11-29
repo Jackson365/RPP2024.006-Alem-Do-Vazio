@@ -1160,11 +1160,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8888535075841840568, guid: 464f20b808af9d64a8bb4a65ef3a3f29, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.2890506
+      value: -6.292635
       objectReference: {fileID: 0}
     - target: {fileID: 8888535075841840568, guid: 464f20b808af9d64a8bb4a65ef3a3f29, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.94933
+      value: 1.94957
       objectReference: {fileID: 0}
     - target: {fileID: 8888535075841840568, guid: 464f20b808af9d64a8bb4a65ef3a3f29, type: 3}
       propertyPath: m_LocalPosition.z
@@ -118940,7 +118940,7 @@ PrefabInstance:
       objectReference: {fileID: 1310595405}
     - target: {fileID: 2840218069681902657, guid: de30cd55dad68cb47b7afdbff7c30dd4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.743066
+      value: -6.74328
       objectReference: {fileID: 0}
     - target: {fileID: 2840218069681902657, guid: de30cd55dad68cb47b7afdbff7c30dd4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -123306,12 +123306,12 @@ PlayableDirector:
     value: {fileID: 54505280}
   - key: {fileID: 499834384327561368, guid: ddb796b87d3456c4f8dc453d9e1d16e5, type: 2}
     value: {fileID: 744401330}
-  - key: {fileID: 4994520486474469750, guid: ddb796b87d3456c4f8dc453d9e1d16e5, type: 2}
-    value: {fileID: 1636086075}
-  - key: {fileID: -6847742667517510019, guid: ddb796b87d3456c4f8dc453d9e1d16e5, type: 2}
-    value: {fileID: 1636086071}
   - key: {fileID: -1898800751379731220, guid: ddb796b87d3456c4f8dc453d9e1d16e5, type: 2}
     value: {fileID: 1229998477}
+  - key: {fileID: -3945091748487607370, guid: ddb796b87d3456c4f8dc453d9e1d16e5, type: 2}
+    value: {fileID: 1636086075}
+  - key: {fileID: -2019569858630383227, guid: ddb796b87d3456c4f8dc453d9e1d16e5, type: 2}
+    value: {fileID: 1636086071}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &2071962468 stripped

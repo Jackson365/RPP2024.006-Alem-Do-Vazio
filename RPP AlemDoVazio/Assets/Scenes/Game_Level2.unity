@@ -8903,7 +8903,7 @@ PrefabInstance:
       objectReference: {fileID: 1022226403}
     - target: {fileID: 2840218069681902657, guid: de30cd55dad68cb47b7afdbff7c30dd4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.173066
+      value: -10.173281
       objectReference: {fileID: 0}
     - target: {fileID: 2840218069681902657, guid: de30cd55dad68cb47b7afdbff7c30dd4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -9398,6 +9398,7 @@ GameObject:
   - component: {fileID: 1052401030}
   - component: {fileID: 1052401029}
   - component: {fileID: 1052401028}
+  - component: {fileID: 1052401031}
   m_Layer: 0
   m_Name: Sally
   m_TagString: Untagged
@@ -9606,6 +9607,19 @@ CapsuleCollider2D:
   m_Offset: {x: -0.0027697908, y: 0}
   m_Size: {x: 0.27553958, y: 0.45999998}
   m_Direction: 0
+--- !u!114 &1052401031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1052401023}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 851b7aa84058f4f4193f35a008007dc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playableDirector: {fileID: 1052401027}
 --- !u!1001 &1056032067
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -131992,11 +132006,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8888535075841840568, guid: 464f20b808af9d64a8bb4a65ef3a3f29, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.1958437
+      value: -6.199412
       objectReference: {fileID: 0}
     - target: {fileID: 8888535075841840568, guid: 464f20b808af9d64a8bb4a65ef3a3f29, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.88354
+      value: -0.88352996
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
