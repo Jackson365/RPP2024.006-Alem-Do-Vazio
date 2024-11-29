@@ -213,8 +213,14 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Z))
         {
             if (GameController.instance.IsGamePaused()) return;
-            FireSelectedBow();
-            AudioObserver.OnPlaySfxEvent("Bow");
+
+            if (movement == 0)
+            {
+                FireSelectedBow();
+                AudioObserver.OnPlaySfxEvent("Bow");
+            }
+            //FireSelectedBow();
+            //AudioObserver.OnPlaySfxEvent("Bow");
         }
     }
 

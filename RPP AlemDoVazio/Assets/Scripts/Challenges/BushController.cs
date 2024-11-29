@@ -7,6 +7,7 @@ using UnityEngine;
 public class BushController : MonoBehaviour
 {
     private Animator anim;
+    public AudioSource Arbusto;
 
     private void Start()
     {
@@ -18,6 +19,7 @@ public class BushController : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             anim.SetInteger("Collision", 1);
+            Arbusto.Play();
         }
     }
 

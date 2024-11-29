@@ -26,7 +26,7 @@ public class EnemyFlying : MonoBehaviour
     
     private int random;
     private float time;
-    //private bool isAttacking = false; // Variável para controlar se o inimigo está atacando
+    private bool isAttacking = false; // Variável para controlar se o inimigo está atacando
     
     // Novo: cooldown do ataque
     public float attackCooldown = 0.5f;  // Tempo entre os ataques
@@ -67,6 +67,11 @@ public class EnemyFlying : MonoBehaviour
 
         if (distance <= attackRange)
         {
+            if (!isAttacking)
+            {
+                isAttacking = true;
+                attack.Play();
+            }
             if (Time.time >= nextAttackTime)
             {
                 HealthObserver.TakeDamage(damage);
@@ -78,13 +83,14 @@ public class EnemyFlying : MonoBehaviour
         else if (distance > attackRange && distance < 4)
         {
             anim.SetInteger("Collision", 1);
-            attack.Play();
             transform.position = Vector2.MoveTowards(transform.position, playerPos.position, speedEnemy * Time.deltaTime);
+            isAttacking = false; // Saiu do modo de ataque
         }
         else if (distance >= 4)
         {
             anim.SetInteger("Collision", 0);
             transform.position = Vector2.MoveTowards(transform.position, initialPosition, speedEnemy * Time.deltaTime);
+            isAttacking = false; // Saiu do modo de ataque
         }
     }
     
