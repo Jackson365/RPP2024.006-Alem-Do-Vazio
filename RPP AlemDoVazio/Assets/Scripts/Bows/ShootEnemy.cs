@@ -12,6 +12,8 @@ public class ShootEnemy : MonoBehaviour
 
     private Transform player; // Referência ao transform do jogador
     private Vector2 direction; // Direção para o jogador
+    
+    
 
     void Start()
     {

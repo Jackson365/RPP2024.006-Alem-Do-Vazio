@@ -214,6 +214,7 @@ public class PlayerController : MonoBehaviour
         {
             if (GameController.instance.IsGamePaused()) return;
             FireSelectedBow();
+            AudioObserver.OnPlaySfxEvent("Bow");
         }
     }
 

@@ -7,21 +7,9 @@ using UnityEngine.SceneManagement;
 public class CarregarCenaCutscenes : MonoBehaviour
 {
     public string cenaCarregar;
-    //public GameObject CanvasObj;
     
     void Start()
     {
         SceneManager.LoadScene(cenaCarregar);
     }
-
-    //private void Update()
-    //{
-    //    StartCoroutine(ActivateCanvas());
-    //}
-    
-    //private IEnumerator ActivateCanvas()
-    //{
-        //yield return new WaitForSeconds(0.5f);
-        //CanvasObj.SetActive(true);
-    //}
 }

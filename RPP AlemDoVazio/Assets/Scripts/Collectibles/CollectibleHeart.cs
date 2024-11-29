@@ -11,6 +11,7 @@ public class CollectibleHeart : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             HealthObserver.Heal(vHeart);
+            AudioObserver.OnPlaySfxEvent("Heart");
             Destroy(gameObject);
         }
     }

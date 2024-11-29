@@ -13,6 +13,7 @@ public class CollectibleAmulet : MonoBehaviour
         {
                 AudioObserver.OnPlaySfxEvent("Collectibles");
                 GameController.instance.UpdateAmulet(valueAmulet);
+                AudioObserver.OnPlaySfxEvent("Amulet");
                 Destroy(gameObject);
         }
     }

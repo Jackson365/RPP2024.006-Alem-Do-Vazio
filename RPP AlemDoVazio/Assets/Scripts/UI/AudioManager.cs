@@ -8,7 +8,7 @@ public class AudioManager : MonoBehaviour
     public static AudioManager instance;
     
     public AudioSource musicSource, SfxSource;
-    public AudioClip clipJump, clipCollectibles;
+    public AudioClip clipJump, clipCollectibles, clipBow, clipAmulet, clipHeart;
 
     private void OnEnable()
     {
@@ -46,6 +46,15 @@ public class AudioManager : MonoBehaviour
                 break;
             case "Collectibles":
                 SfxSource.PlayOneShot(clipCollectibles);
+                break;
+            case "Bow":
+                SfxSource.PlayOneShot(clipBow);
+                break;
+            case "Amulet":
+                SfxSource.PlayOneShot(clipAmulet);
+                break;
+            case "Heart":
+                SfxSource.PlayOneShot(clipHeart);
                 break;
             default:
                 Debug.LogError($"Efeito sonoro {nameClip} não encontrado");

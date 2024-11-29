@@ -1,0 +1,280 @@
+fileFormatVersion: 2
+guid: 41067408d354a754ab0a1277eb9996a8
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Nome - Tutorial - Troca De Flecha_0
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 556
+        width: 391
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed23dfdfffa7f484caa09165c926530a
+      internalID: 481034153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nome - Tutorial - Troca De Flecha_5
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 450
+        width: 343
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00520fe53766b9e478d7264b4ed4cc4a
+      internalID: 1561083764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nome - Tutorial - Troca De Flecha_10
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 343
+        width: 279
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5f84e29c92c4db488be49aa72a2ff05
+      internalID: 235653106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nome - Tutorial - Troca De Flecha_14
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 236
+        width: 362
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf50cb7c0f95c154695ed0595aaca0fa
+      internalID: 2001252020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nome - Tutorial - Troca De Flecha_19
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 129
+        width: 138
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdda91ccad59f34419dfd7a53fd3d0d0
+      internalID: 13255143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nome - Tutorial - Troca De Flecha_21
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 23
+        width: 422
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf2daf90fca0daa4f96ec7e5ff5a6234
+      internalID: -1155497177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Nome - Tutorial - Troca De Flecha_0: 481034153
+      Nome - Tutorial - Troca De Flecha_1: -1964295856
+      Nome - Tutorial - Troca De Flecha_10: 235653106
+      Nome - Tutorial - Troca De Flecha_11: -746777207
+      Nome - Tutorial - Troca De Flecha_12: -1513793519
+      Nome - Tutorial - Troca De Flecha_13: -1324494919
+      Nome - Tutorial - Troca De Flecha_14: 2001252020
+      Nome - Tutorial - Troca De Flecha_15: 638219859
+      Nome - Tutorial - Troca De Flecha_16: -1156989126
+      Nome - Tutorial - Troca De Flecha_17: -1709069868
+      Nome - Tutorial - Troca De Flecha_18: 1928875532
+      Nome - Tutorial - Troca De Flecha_19: 13255143
+      Nome - Tutorial - Troca De Flecha_2: 1499700870
+      Nome - Tutorial - Troca De Flecha_20: 442822216
+      Nome - Tutorial - Troca De Flecha_21: -1155497177
+      Nome - Tutorial - Troca De Flecha_22: -419595585
+      Nome - Tutorial - Troca De Flecha_23: -30528456
+      Nome - Tutorial - Troca De Flecha_24: -577141011
+      Nome - Tutorial - Troca De Flecha_25: -1491567406
+      Nome - Tutorial - Troca De Flecha_26: 1988982191
+      Nome - Tutorial - Troca De Flecha_3: 2061694460
+      Nome - Tutorial - Troca De Flecha_4: -279422632
+      Nome - Tutorial - Troca De Flecha_5: 1561083764
+      Nome - Tutorial - Troca De Flecha_6: 716073005
+      Nome - Tutorial - Troca De Flecha_7: -1978757650
+      Nome - Tutorial - Troca De Flecha_8: -162927369
+      Nome - Tutorial - Troca De Flecha_9: -1357482113
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

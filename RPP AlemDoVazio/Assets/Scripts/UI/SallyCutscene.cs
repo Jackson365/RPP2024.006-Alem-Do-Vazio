@@ -10,6 +10,8 @@ public class SallyCutscene : MonoBehaviour
     public GameObject LimitadorInicio;
     public GameObject CutsCene;
     public GameObject Personagem;
+    public GameObject BowAparecer;
+    
     public PlayableDirector cutscene; 
     
     private bool jaAtivou = false;
@@ -43,6 +45,7 @@ public class SallyCutscene : MonoBehaviour
             LimitadorObj.SetActive(false);
             LimitadorInicio.SetActive(false);
             Destroy(CutsCene);
+            BowAparecer.SetActive(true);
             Destroy(Personagem);
             
         }

@@ -34,6 +34,8 @@ public class EnemyShoot : MonoBehaviour
     // Camada para os obstáculos que bloqueiam a visão
     public LayerMask obstacleLayer;
 
+    public AudioSource attack;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -105,6 +107,7 @@ public class EnemyShoot : MonoBehaviour
         if (tempAtual <= 0)
         {
             GameObject shootEnemy = Instantiate(shoot, firePoint.position, Quaternion.Euler(0f, 0f, -90f));
+            attack.Play();
             tempAtual = tempMax;
             
             yield return new WaitForSeconds(0.3f);

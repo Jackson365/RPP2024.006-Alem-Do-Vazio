@@ -14,9 +14,9 @@ public class BowDesespero : BowController
     {
         if (collison != null)
         {
-            if (collison.gameObject.tag == "EnemyFlying")
+            if (collison.gameObject.tag == "EnemyPatroll")
             {
-                collison.GetComponent<EnemyFlying>().Damage(damage);
+                collison.GetComponent<EnemyPatroll>().Damage(damage);
                 Destroy(gameObject);
             }
             

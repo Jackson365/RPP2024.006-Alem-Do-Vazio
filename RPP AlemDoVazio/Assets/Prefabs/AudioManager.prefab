@@ -44,7 +44,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7a2bb1025424fc346bb3492b08a60f18, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -240,5 +240,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSource: {fileID: 8289124116148943092}
   SfxSource: {fileID: 3464171085835730127}
-  clipJump: {fileID: 8300000, guid: bfaa9ad5fb6ff45488af4d7177ae5d73, type: 3}
+  clipJump: {fileID: 8300000, guid: e54dfaf317a307342b669542fd2e1b28, type: 3}
   clipCollectibles: {fileID: 8300000, guid: 1a3f3aa9216d9214382cdb00cbb8e6c9, type: 3}
+  clipBow: {fileID: 8300000, guid: df5181bbe1bcd82428e034505cbf40a0, type: 3}
+  clipAmulet: {fileID: 8300000, guid: 9cbae9996674ad24b9d1fb53d8df6ad3, type: 3}
+  clipHeart: {fileID: 8300000, guid: 2c99d466c91ec5c43ba234ae885f7d0d, type: 3}

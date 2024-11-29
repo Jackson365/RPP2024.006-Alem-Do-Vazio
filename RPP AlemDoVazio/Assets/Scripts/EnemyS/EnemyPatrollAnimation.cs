@@ -6,6 +6,7 @@ using UnityEngine;
 public class EnemyPatrollAnimation : MonoBehaviour
 {
     public Animator anim;
+    public AudioSource attack;
 
     private void Start()
     {
@@ -17,6 +18,7 @@ public class EnemyPatrollAnimation : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             StartCoroutine(AnimationAttack());
+            attack.Play();
         }
     }
 

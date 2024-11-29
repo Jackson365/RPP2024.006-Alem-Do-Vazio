@@ -37,6 +37,8 @@ public class EnemyFlying : MonoBehaviour
     
     public PlayerController _playerController;
 
+    public AudioSource attack;
+
 
     private void Start()
     {
@@ -65,6 +67,7 @@ public class EnemyFlying : MonoBehaviour
 
         if (distance <= attackRange)
         {
+            attack.Play();
             if (Time.time >= nextAttackTime)
             {
                 HealthObserver.TakeDamage(damage);

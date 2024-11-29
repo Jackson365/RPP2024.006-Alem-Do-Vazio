@@ -25,6 +25,8 @@ public class EnemyPatroll : MonoBehaviour
     
     public PlayerController _playerController;
 
+    
+
     // Start is called before the first frame update
     void Start()
     {
