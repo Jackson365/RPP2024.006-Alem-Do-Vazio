@@ -67,7 +67,6 @@ public class EnemyFlying : MonoBehaviour
 
         if (distance <= attackRange)
         {
-            attack.Play();
             if (Time.time >= nextAttackTime)
             {
                 HealthObserver.TakeDamage(damage);
@@ -79,6 +78,7 @@ public class EnemyFlying : MonoBehaviour
         else if (distance > attackRange && distance < 4)
         {
             anim.SetInteger("Collision", 1);
+            attack.Play();
             transform.position = Vector2.MoveTowards(transform.position, playerPos.position, speedEnemy * Time.deltaTime);
         }
         else if (distance >= 4)

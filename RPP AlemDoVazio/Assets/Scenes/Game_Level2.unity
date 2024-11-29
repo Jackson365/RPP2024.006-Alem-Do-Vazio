@@ -3441,9 +3441,17 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3935669667422074174, guid: e2e985373e43bd14bbfaa0c4ded5b1ab, type: 3}
+      propertyPath: speed
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3935669667422074174, guid: e2e985373e43bd14bbfaa0c4ded5b1ab, type: 3}
       propertyPath: health
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 3935669667422074174, guid: e2e985373e43bd14bbfaa0c4ded5b1ab, type: 3}
+      propertyPath: attackObj
+      value: 
+      objectReference: {fileID: 1455173569}
     - target: {fileID: 3935669667422074174, guid: e2e985373e43bd14bbfaa0c4ded5b1ab, type: 3}
       propertyPath: nomeImagem
       value: 
@@ -3466,7 +3474,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4035020534286051788, guid: e2e985373e43bd14bbfaa0c4ded5b1ab, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -112.16
+      value: -108.11908
       objectReference: {fileID: 0}
     - target: {fileID: 4035020534286051788, guid: e2e985373e43bd14bbfaa0c4ded5b1ab, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3517,8 +3525,16 @@ PrefabInstance:
       value: EnemyPatroll
       objectReference: {fileID: 0}
     - target: {fileID: 8065643867441475107, guid: e2e985373e43bd14bbfaa0c4ded5b1ab, type: 3}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8065643867441475107, guid: e2e985373e43bd14bbfaa0c4ded5b1ab, type: 3}
       propertyPath: m_BodyType
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8065643867441475107, guid: e2e985373e43bd14bbfaa0c4ded5b1ab, type: 3}
+      propertyPath: m_GravityScale
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8901277838263340990, guid: e2e985373e43bd14bbfaa0c4ded5b1ab, type: 3}
       propertyPath: m_SortingOrder
@@ -128969,6 +128985,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1439703160}
   m_CullTransparentMesh: 1
+--- !u!1 &1455173569 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6806060994210695049, guid: e2e985373e43bd14bbfaa0c4ded5b1ab, type: 3}
+  m_PrefabInstance: {fileID: 429476755}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1457079991
 PrefabInstance:
   m_ObjectHideFlags: 0

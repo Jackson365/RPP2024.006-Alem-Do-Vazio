@@ -72,7 +72,7 @@ public class EnemyPatroll : MonoBehaviour
     public void Damage(int vida)
     {
         health -= vida;
-        anim.SetInteger("Collision", 2);
+        anim.SetTrigger("HitP");
 
         if (health == 4)
         {
