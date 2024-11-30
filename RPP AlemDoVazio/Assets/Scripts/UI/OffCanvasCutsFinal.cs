@@ -7,6 +7,6 @@ public class OffCanvasCutsFinal : MonoBehaviour
     public GameObject CanvasObj;
     void Start()
     {
-        CanvasObj.SetActive(false);
+        GameController.instance.CanvasObj.SetActive(false);
     }
 }

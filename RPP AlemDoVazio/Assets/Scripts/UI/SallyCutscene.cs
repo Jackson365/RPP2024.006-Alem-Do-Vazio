@@ -32,6 +32,7 @@ public class SallyCutscene : MonoBehaviour
             if (other.CompareTag("Player") && !jaAtivou)
             {
                 jaAtivou = true;
+                LimitadorInicio.SetActive(true);
                 cutscene.Play();
             }
         }

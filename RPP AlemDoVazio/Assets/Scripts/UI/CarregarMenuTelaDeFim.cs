@@ -10,7 +10,15 @@ public class CarregarMenuTelaDeFim : MonoBehaviour
     
     void Start()
     {
+        //MenuObj.SetActive(true);
+        GameController.instance.MenuObj.SetActive(true);
+        StartCoroutine(RestartMusicAfterSceneLoad());
         SceneManager.LoadScene(cenaCarregar);
-        MenuObj.SetActive(true);
+    }
+    
+    private IEnumerator RestartMusicAfterSceneLoad()
+    {
+        yield return null;
+        AudioObserver.OnPlayMusicEvent();
     }
 }

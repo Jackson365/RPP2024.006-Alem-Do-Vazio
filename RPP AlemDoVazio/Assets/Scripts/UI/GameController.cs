@@ -20,6 +20,7 @@ public class GameController : MonoBehaviour
     public GameObject MenuObj;
     public GameObject specialBowUI;
     public GameObject sound;
+    public GameObject BowsObj;
 
     [Header("Play e Pause")]
     public Button playPauseButton; // Botão para controlar o Play/Pause
@@ -93,10 +94,15 @@ public class GameController : MonoBehaviour
     {
         CheckCurrentScene();
         
-        //if (SceneManager.GetActiveScene().buildIndex == 0 && CanvasObj.activeSelf)
-        //{
-            //CanvasObj.SetActive(false);
-        //}
+        if (SceneManager.GetActiveScene().buildIndex == 4 && BowsObj.activeSelf)
+        {
+            BowsObj.SetActive(false);
+        }
+        
+        if (SceneManager.GetActiveScene().buildIndex == 5 && BowsObj.activeSelf)
+        {
+            BowsObj.SetActive(false);
+        }
     }
 
     private void CheckCurrentScene()
